@@ -1,0 +1,1074 @@
+{
+  "common": {
+    "welcome": "Welcome to the internationalized app!",
+    "logout": "Log out",
+    "language": "Language",
+    "english": "English",
+    "arabic": "Arabic",
+    "loading": "Loading...",
+    "save": "Save",
+
+    "loadingBill": "Loading Bill...",
+    "delete": "Delete",
+    "month": "Month",
+    "actions": "Actions",
+    "clear": "Clear",
+    "loadingModal": "Loading Modal...",
+    "edit": "Edit",
+    "notAvailable": "N/A",
+    "download": "Download",
+    "saveReading": "Save Reading",
+    "changePhoto": "Change Photo",
+    "takePhoto": "Take Photo",
+    "goBack": "Go Back",
+    "confirm": "Confirm",
+    "confirming": "Confirming...",
+    "uploadPhoto": "Upload Photo",
+    "verify": "Verify",
+    "view": "View",
+    "next": "Next",
+    "back": "Back",
+    "submitting": "Submitting...",
+    "actionsArray": {
+      "verify": "Verify",
+      "view": "View"
+    },
+    "statuses": {
+      "pending": "Pending",
+      "verified": "Verified"
+    },
+    "cancel": "Cancel",
+    "saving": "Saving...",
+    "saveChanges": "Save Changes",
+    "field": "Field",
+    "invalid": "Invalid",
+    "required": "Required",
+    "create": "Create",
+    "creating": "Creating...",
+    "search": "Search",
+    "select": "Select",
+    "finish": "Finish",
+    "all": "All",
+    "yes": "Yes",
+    "name": "Name",
+    "close": "Close",
+    "sending": "Sending...",
+    "orSeparator": "OR",
+    "selectPlaceholder": "Select...",
+    "searchAndSelectPlaceholder": "Search and select...",
+    "validations": {
+      "required": "{{field}} is required",
+      "digitsOnly": "Must be only digits",
+      "minLength": "Must be at least {{min}} digits",
+      "mustBeNumber": "Must be a number",
+      "noNegative": "Cannot be negative",
+      "rateRequired": "Rate is required",
+      "mustBePositive": "Must be a positive number"
+    },
+    "errors": {
+      "unknown": "An unknown error occurred.",
+      "unexpected": "An unexpected error occurred. Please try again.",
+      "deleteFailed": "Failed to delete reading."
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "greeting": "Hello, {{name}}!",
+    "content": "This is your main dashboard area. The layout will adjust based on the selected language direction."
+  },
+  "header": {
+    "welcome": "Welcome, <1>{{username}}</1> ({{role}})",
+    "logout": "Logout"
+  },
+  "sidebar": {
+    "menu": "Menu",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "users": "Users",
+    "packages": "Packages",
+    "meters": "Meters",
+    "readings": "Readings",
+    "messages": "Messages",
+    "bills": "Bills",
+    "fixes": "Fixes",
+    "areas": "Areas"
+  },
+  "loginPage": {
+    "title": "Login to Your Account",
+    "usernameLabel": "Username or Phone",
+    "passwordLabel": "Password",
+    "submitButton": "Login",
+    "submittingButton": "Logging in...",
+    "forgotPasswordLink": "Forgot Password?",
+    "contactHelpText": "Don't have an account or having trouble?",
+    "contactWhatsAppButton": "Contact Us on WhatsApp",
+    "validation": {
+      "usernameRequired": "Username or phone is required",
+      "passwordRequired": "Password is required"
+    }
+  },
+  "dashboardPage": {
+    "loadingText": "Loading Dashboard...",
+    "summaryTitle": "Dashboard Summary",
+    "metersTitle": "Meters",
+    "readingsTitle": "Readings",
+    "billsTitle": "Bills & Payments",
+    "unpaidTitle": "Unpaid Bills",
+    "meters": {
+      "totalActive": "Total Active Meters",
+      "activeFixed": "Active Fixed Meters",
+      "activeUsage": "Active Usage Meters",
+      "totalInactive": "Total Inactive Meters",
+      "withoutReadings": "Meters Without Readings",
+      "total": "Total Meters"
+    },
+    "readings": {
+      "verified": "Verified Readings",
+      "pending": "Pending Readings"
+    },
+    "bills": {
+      "generated": "Generated Bills",
+      "paidTotal": "Paid Bills (Total)",
+      "paidCash": "Paid Bills (Cash)",
+      "paidWhish": "Paid Bills (Whish)",
+      "paidOmt": "Paid Bills (OMT)",
+      "unpaid": "Unpaid Bills",
+      "partiallyPaid": "Partially Paid Bills"
+    },
+    "earnings": {
+      "title": "Earnings",
+      "totalEarnings": "Total Earnings",
+      "totalUsd": "Total Earnings (USD)",
+      "totalLbp": "Total Earnings (LBP)",
+      "breakdownTitle": "Earnings Breakdown by Payment Method",
+      "earningsUsd": "Earnings (USD)",
+      "earningsLbp": "Earnings (LBP)",
+      "cash": "Cash",
+      "whish": "Whish",
+      "omt": "OMT"
+    },
+    "unpaid": {
+      "totalUsd": "Total Unpaid (USD)",
+      "totalLbp": "Total Unpaid (LBP)",
+      "thisMonthUsd": "Unpaid This Month (USD)",
+      "thisMonthLbp": "Unpaid This Month (LBP)"
+    }
+  },
+  "usersPage": {
+    "title": "Users",
+    "addUserButton": "Add User",
+    "searchPlaceholder": "Search by name...",
+    "roleFilterPlaceholder": "Filter by role",
+    "roles": {
+      "all": "All Roles",
+      "system": "System",
+      "user": "User",
+      "admin": "Admin"
+    },
+    "table": {
+      "headerUsername": "Username",
+      "headerPhone": "Phone Number",
+      "headerRole": "Role",
+      "headerActions": "Actions",
+      "noUsersFound": "No users found."
+    },
+    "modals": {
+      "deleteTitle": "Delete User",
+      "deleteBody": "Are you sure you want to delete the user <1>{{username}}</1>? This action cannot be undone."
+    },
+    "alerts": {
+      "deleteSuccess": "User \"{{username}}\" deleted successfully."
+    }
+  },
+  "users": {
+    "addUserTitle": "Add New User",
+    "editUserTitle": "Edit User: {{username}}",
+    "createUser": "Create User",
+    "usernameLabel": "Username",
+    "usernamePlaceholder": "Enter username",
+    "phoneNumberLabel": "Phone Number",
+    "phoneNumberPlaceholder": "Enter phone number",
+    "roleLabel": "Role",
+    "rolePlaceholder": "Select a role",
+    "roles": {
+      "admin": "Admin",
+      "user": "User"
+    },
+    "validation": {
+      "usernameTooShort": "Too Short!",
+      "usernameRequired": "Username is required",
+      "phoneOnlyDigits": "Must be only digits",
+      "phoneMinDigits": "Must be at least 8 digits",
+      "phoneRequired": "Phone number is required",
+      "roleRequired": "Role is required"
+    },
+
+    "messages": {
+      "userCreatedSuccess": "User created successfully!",
+      "userUpdatedSuccess": "User updated successfully!",
+      "userCreateFailed": "Failed to create user.",
+      "userUpdateFailed": "Failed to update user."
+    }
+  },
+
+  "areas": {
+    "title": "Areas",
+    "addArea": "Add Area",
+    "goToAreasPage": "Go to Areas page",
+    "searchPlaceholder": "Search by area name...",
+    "table": {
+      "name": "Area Name",
+      "elevation": "Elevation (m)",
+      "actions": "Actions"
+    },
+    "noAreasFound": "No areas found.",
+    "deleteModal": {
+      "title": "Delete Area",
+      "body": "Are you sure you want to delete <strong>{{areaName}}</strong>? This action cannot be undone.",
+      "confirmText": "Delete"
+    },
+    "notifications": {
+      "updateSuccess": "Area updated successfully!",
+      "deleteSuccess": "Area \"{{areaName}}\" has been deleted.",
+      "createSuccess": "Area created successfully!"
+    },
+    "createForm": {
+      "placeholders": {
+        "name": "Area Name",
+        "elevation": "Elevation (m)"
+      },
+      "elevationTooltip": "The elevation is used to determine if the area is above or below 700m."
+    },
+    "validation": {
+      "namePattern": "Only Arabic, English letters and spaces are allowed",
+      "nameRequired": "Area name is required",
+      "elevationNumber": "Elevation must be a number",
+      "elevationPositive": "Must be a positive number",
+      "elevationRequired": "Elevation is required"
+    }
+  },
+
+  "fixes": {
+    "title": "Fixes Management",
+    "addFix": "Add Fix",
+    "searchPlaceholder": "Search by customer name...",
+    "table": {
+      "customerName": "Customer Name",
+      "fixDate": "Fix Date",
+      "cost": "Cost"
+    },
+    "noFixesFound": "No fixes found for the selected criteria.",
+    "deleteModal": {
+      "title": "Delete Fix",
+      "body": "Are you sure you want to delete the fix for <strong>{{customerName}}</strong> on {{fixDate}}? This action cannot be undone.",
+      "confirmText": "Delete"
+    },
+    "notifications": {
+      "deleteSuccess": "Fix for \"{{customerName}}\" has been deleted."
+    },
+    "addTitle": "Add New Fix",
+    "editTitle": "Edit Fix",
+    "customerMeterLabel": "Customer / Meter",
+    "customerNameLabel": "Customer Name",
+    "noCustomersFound": "No customers found.",
+    "selected": "Selected",
+    "fixDateLabel": "Fix Date",
+    "descriptionLabel": "Description",
+    "costLabel": "Cost ($)",
+    "costPlaceholder": "Enter cost",
+    "createFix": "Create Fix",
+    "creating": "Creating...",
+    "saveChanges": "Save Changes",
+    "saving": "Saving...",
+    "createSuccess": "Fix created successfully!",
+    "updateSuccess": "Fix updated successfully!",
+    "searchError": "Failed to search for customers.",
+    "validation": {
+      "meterRequired": "A customer/meter must be selected.",
+      "dateRequired": "Fix date is required.",
+      "descriptionRequired": "Description is required.",
+      "costRequired": "Cost is required.",
+      "costType": "Cost must be a number.",
+      "costPositive": "Cost must be a positive number."
+    }
+  },
+
+  "packages": {
+    "title": "Electricity Packages",
+    "goToPackagesPage": "Go to Packages page",
+    "viewRates": "View Rates",
+    "addPackage": "Add Package",
+    "searchPlaceholder": "Search by amperage...",
+    "tooltips": {
+      "amperage": "The amperage defines the current capacity of the package.",
+      "activation_fee": "The activation fee is a fixed charge applied simply for having a meter, regardless of consumption.",
+      "fixed_fee": "The fixed fee is a monthly charge applied regardless of consumption for customers without meters."
+    },
+    "table": {
+      "amperage": "Amperage",
+      "activationFee": "Activation Fee",
+      "fixedFee": "Fixed Fee",
+      "meters": "Meters"
+    },
+    "noPackagesFound": "No packages found.",
+    "deleteModal": {
+      "title": "Delete Package",
+      "body": "Are you sure you want to delete the <strong>{{amperage}}A</strong> package? This action cannot be undone.",
+      "confirmText": "Delete"
+    },
+    "notifications": {
+      "deleteSuccess": "Package {{amperage}}A deleted successfully."
+    },
+    "addTitle": "Add New Package",
+    "editTitle": "Edit Package: {{amperage}}A",
+    "amperageLabel": "Amperage",
+    "activationFeeLabel": "Activation Fee (LBP)",
+    "fixedFeeLabel": "Fixed Monthly Fee no meter (LBP)",
+    "enterAmperage": "Enter amperage",
+    "enterActivationFee": "Enter activation fee",
+    "enterFixedFee": "Enter fixed monthly fee",
+    "createPackage": "Create Package",
+    "validation": {
+      "positive": "Must be a positive number",
+      "negative": "Cannot be a negative number",
+      "amperageRequired": "Amperage is required",
+      "activationFeeRequired": "Activation Fee is required",
+      "fixedFeeRequired": "Fixed Fee is required"
+    },
+    "messages": {
+      "packageCreatedSuccess": "Package created successfully!",
+      "packageUpdatedSuccess": "Package updated successfully!",
+      "packageCreateFailed": "Failed to create package.",
+      "packageUpdateFailed": "Failed to update package."
+    }
+  },
+
+  "meters": {
+    "title": "Meters",
+    "tools": "Meter Tools",
+    "addMeter": "Add Meter",
+    "searchPlaceholder": "Search by customer name...",
+    "noMetersFound": "No meters found.",
+    "filter": {
+      "area": "Filter by Area",
+      "package": "Filter by Package",
+      "packageType": "Filter by Package Type",
+      "status": "Filter by Status",
+      "moreFilters": "More Filters"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "packageType": {
+      "fixed": "Fixed",
+      "usage": "Usage"
+    },
+    "table": {
+      "customerName": "Customer Name",
+      "phone": "Phone",
+      "address": "Address",
+      "amperage": "Amperage",
+      "area": "Area"
+    },
+    "actions": {
+      "edit": "Edit Meter",
+      "delete": "Delete Meter",
+      "getQrCode": "Get QR Code",
+      "viewStatement": "View Statement"
+    },
+    "deleteModal": {
+      "title": "Delete Meter",
+      "body": "Are you sure you want to delete the meter for <strong>{{customerName}}</strong>?"
+    },
+    "notifications": {
+      "deleteSuccess": "Meter for \"{{customerName}}\" has been deleted."
+    },
+    "addMeterTitle": "Add New Meter",
+    "editMeterTitle": "Edit Meter",
+    "createMeter": "Create Meter",
+    "customerFullName": "Customer Full Name",
+    "customerFullNamePlaceholder": "Enter full name",
+    "customerPhoneNumber": "Customer Phone Number",
+    "customerPhoneNumberPlaceholder": "Enter phone number",
+    "address": "Address / Building Details",
+    "addressPlaceholder": "Enter address or building number",
+    "statusWord": "Status",
+    "statusActive": "Active",
+    "statusInactive": "Inactive",
+    "area": "Area",
+    "package": "Package",
+    "amperagePackage": "{{amperage}}A Package",
+    "packageTypeWord": "Package Type",
+    "packageTypeTooltip": "'Usage' bills based on kWh consumed. 'Fixed' bills a flat monthly rate.",
+    "packageTypeUsage": "Usage-Based",
+    "packageTypeFixed": "Fixed-Fee",
+    "initialReading": "Initial Reading",
+    "initialReadingKwh": "Initial Reading (kWh)",
+    "initialReadingPlaceholder": "Enter initial reading",
+    "toolsModal": {
+      "title": "Meter Tools",
+      "downloadTab": {
+        "title": "Download All QR Codes",
+        "heading": "Download QR Codes as ZIP",
+        "description": "Click the button below to request a ZIP file containing the QR code for every meter in the system.",
+        "fetchError": "Could not retrieve the download link. Please try again.",
+        "requestBtn": "Request QR Codes File",
+        "requestingBtn": "Requesting File...",
+        "downloadBtn": "Download ZIP File"
+      },
+      "uploadTab": {
+        "title": "Upload Meters File",
+        "heading": "Upload Meters from File",
+        "requirements": {
+          "title": "File Requirements",
+          "fields": {
+            "fullName": {
+              "label": "full name",
+              "description": "Customer's full name (e.g. {{example}})"
+            },
+            "phoneNumber": {
+              "label": "phone number",
+              "description": "Phone number (e.g. {{example}})"
+            },
+            "address": {
+              "label": "address",
+              "description": "Address or building number (e.g. {{example}})"
+            },
+            "amperage": {
+              "label": "amperage",
+              "description": "Number of amperes (e.g. {{example1}}, {{example2}})"
+            },
+            "area": {
+              "label": "area",
+              "description": "Area name (e.g. {{example1}}, {{example2}})"
+            },
+            "packageType": {
+              "label": "package type",
+              "description": "Must be {{example1}} or {{example2}}"
+            },
+            "initialReading": {
+              "label": "initial reading",
+              "description": "Starting meter reading (e.g. {{example1}}, {{example2}})"
+            }
+          },
+          "acceptedFormats": "Accepted formats:",
+          "columnWarning": "Make sure column names match exactly."
+        },
+        "fileInputLabel": "Select a .csv or .xlsx file",
+        "successMessage": "File uploaded successfully!",
+        "genericError": "Upload failed",
+        "errorAlert": {
+          "title": "Upload Failed",
+          "description": "The following errors were found in your file:"
+        },
+        "uploadBtn": "Upload File",
+        "uploadingBtn": "Uploading..."
+      },
+      "closeBtn": "Close"
+    },
+    "qrModal": {
+      "qrCodeTitle": "Meter QR Code",
+      "qrCodeLoadError": "Failed to load QR Code.",
+      "qrCodeAltText": "QR Code for meter {{meterId}}"
+    },
+    "statementModal": {
+      "title": "Account Statement",
+      "customer": "Customer",
+      "phone": "Phone",
+      "selectYear": "Select Year",
+      "yearSummaryTitle": "Year Summary",
+      "totalBilled": "Total Billed",
+      "totalPaid": "Total Paid",
+      "totalUnpaid": "Total Unpaid",
+      "totalFixes": "Total Fixes Cost",
+      "completionRate": "Payment Completion Rate",
+      "monthlyBreakdown": "Monthly Breakdown",
+      "month": "Month",
+      "status": "Status",
+      "amountUsd": "Amount ($)",
+      "unpaidUsd": "Unpaid ($)",
+      "prevReading": "Prev. Reading",
+      "currentReading": "Curr. Reading",
+      "usage": "Usage (kWh)",
+      "fixes": "Fixes ($)",
+      "kwhRate": "kWh Rate",
+      "dollarRate": "Dollar Rate",
+      "activationFee": "Activation Fee (LBP)",
+      "noBillExists": "No bill generated for this month.",
+      "noDataAvailable": "No statement data available for the selected year.",
+      "billStatus": {
+        "paid": "Paid",
+        "unpaid": "Unpaid",
+        "partially_paid": "Partially Paid",
+        "no_bill": "No Bill"
+      },
+      "errors": {
+        "fetchFailed": "Failed to fetch the statement. Please try again."
+      },
+      "payBills": "Pay All Bills",
+      "payBill": "Pay ",
+      "printStatement": "Print Statement",
+      "printing": "Printing...",
+      "payAllBillsModal": {
+        "title": "Pay All Unpaid Bills",
+        "disclaimer": "You are about to mark all unpaid bills for this meter as 'Paid'. This action cannot be undone.",
+        "paymentMethodLabel": "Payment Method",
+        "paymentMethodPlaceholder": "Select a payment method...",
+        "successMessage": "All unpaid bills have been marked as paid successfully.",
+        "paymentMethods": {
+          "wish": "Whish",
+          "cash": "Cash",
+          "omt": "OMT"
+        },
+        "errors": {
+          "noMethodSelected": "Please select a payment method before confirming."
+        }
+      }
+    }
+  },
+
+  "messages": {
+    "connectWhatsapp": "Connect WhatsApp",
+    "whatsappConnected": "WhatsApp Connected",
+    "loadingSessionStatus": "Checking WhatsApp status...",
+    "meterCreated": "Meter created successfully!",
+    "meterUpdated": "Meter updated successfully!",
+    "managePhoneNumberWord": "Manage Phone Number",
+    "messageTemplates": "Message Templates",
+    "sendMessage": "Send Message",
+    "createTemplate": "Create Template",
+    "searchByNamePlaceholder": "Search by template name...",
+    "messagePreview": "Message Preview",
+    "noTemplatesFound": "No templates found.",
+    "deleteTemplateTitle": "Delete Template",
+    "deleteConfirmation": "Are you sure you want to delete the template <strong>\"{{name}}\"</strong>? This action cannot be undone.",
+    "deleteSuccess": "Template \"{{name}}\" deleted successfully.",
+
+    "managePhoneNumber": {
+      "backButton": "Back to Templates",
+      "errors": {
+        "alreadyRegistered": "This phone number is already registered. Scan the QR code below to connect.",
+        "statusFetchFailed": "Could not retrieve session status. Please try again later."
+      },
+      "notifications": {
+        "disconnected": "Successfully disconnected."
+      },
+      "form": {
+        "title": "Connect your WhatsApp Number",
+        "description": "Enter your name and WhatsApp phone number to generate a QR code. You'll need to scan this code with your phone to link your account for notifications.",
+        "nameLabel": "Name",
+        "phoneLabel": "WhatsApp Number",
+        "phonePlaceholder": "e.g., 71916133",
+        "button": "Generate QR Code",
+        "validations": {
+          "nameRequired": "Name is required",
+          "phoneInvalid": "Enter a valid Lebanese number (e.g., 71916133)",
+          "phoneRequired": "Phone number is required"
+        }
+      },
+      "qr": {
+        "title": "Scan to Connect",
+        "description": "Open WhatsApp on your phone, go to <1>Settings > Linked Devices</1>, and scan this code.",
+        "expiryMessage": "QR code expires in <1>{{timeLeft}}</1> seconds.",
+        "refreshButton": "Refresh QR Code"
+      },
+      "connecting": {
+        "title": "Connecting...",
+        "description": "Finalizing connection, please wait."
+      },
+      "connected": {
+        "title": "Successfully Connected!",
+        "description": "Your phone is now linked and able to send messages and receive notifications.",
+        "disconnectButton": "Disconnect Number"
+      },
+      "disconnectModal": {
+        "title": "Disconnect Phone Number",
+        "body": "Are you sure you want to disconnect? This will log you out of the current WhatsApp session and you will stop receiving notifications.",
+        "confirmText": "Yes, Disconnect",
+        "confirmingText": "Disconnecting..."
+      }
+    },
+    "modals": {
+      "editTemplate": "Edit Template",
+      "createNewTemplate": "Create New Template",
+      "templateNameLabel": "Template Name",
+      "templateNamePlaceholder": "e.g., Monthly Bill Reminder",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Type your message here and drag placeholders...",
+      "placeholdersTitle": "Placeholders",
+      "dragInstruction": "Click on any placeholder to insert it below at the cursor position.",
+      "createTemplateButton": "Create Template"
+    },
+    "placeholders": {
+      "customerData": "Customer Data",
+      "billData": "Bill Data",
+      "meterData": "Meter Data"
+    },
+    "alerts": {
+      "templateUpdated": "Template updated successfully!",
+      "templateCreated": "Template created successfully!"
+    },
+    "validation": {
+      "templateNameRequired": "Template name is required.",
+      "messageRequired": "Message content is required."
+    },
+    "sendMessageModal": {
+      "title": "Send New Message",
+      "sendMessageButton": "Send Message",
+      "advancedFilterSeparator": "OR USE ADVANCED FILTERS",
+      "step1": {
+        "header": "Step 1: Message Content",
+        "templateLabel": "Template",
+        "templateTooltip": "Select a pre-defined message template.",
+        "customMessageLabel": "Custom Message",
+        "customMessageTooltip": "Write a custom message instead of using a template."
+      },
+      "step2": {
+        "header": "Step 2: Target Audience",
+        "broadcastLabel": "Broadcast to ALL customers",
+        "broadcastTooltip": "Send this message to every active customer in the system.",
+        "specificCustomersLabel": "Specific Customers",
+        "specificCustomersTooltip": "Search and select one or more customers.",
+        "audienceSelection": "Audience Selection"
+      },
+      "session": {
+        "notConnectedTitle": "WhatsApp Not Connected",
+        "notConnectedMessage": "To send messages, you must first connect your WhatsApp phone number.",
+        "connectButton": "Connect Phone Number"
+      },
+      "step3": {
+        "header": "Schedule Sending",
+        "meterFiltersHeader": "Meter Filters",
+        "areasLabel": "Area(s)",
+        "areasTooltip": "Filter customers by their geographical area.",
+        "packagesLabel": "Package(s)",
+        "packagesTooltip": "Filter customers by their amperage.",
+        "meterStatusLabel": "Meter Status",
+        "meterStatusTooltip": "Filter meters by whether they are active or inactive.",
+        "packageTypeLabel": "Package Type",
+        "packageTypeTooltip": "Filter by package billing type: usage-based or fixed.",
+        "billFiltersHeader": "Bill Filters",
+        "paymentStatusLabel": "Payment Status",
+        "paymentStatusTooltip": "Filter bills by whether they are paid or unpaid.",
+        "dueDateLabel": "Due Date (Month/Year)",
+        "dueDateTooltip": "Target bills with this due date. Required if you use any bill filters.",
+        "paymentMethodLabel": "Payment Method",
+        "paymentMethodTooltip": "Further narrow down paid bills by payment method (Cash, OMT, WISH).",
+        "overdueOnlyLabel": "Target Overdue Bills Only",
+        "overdueOnlyTooltip": "Target only bills that are past their due date."
+      },
+      "step4": {
+        "sendImmediatelyLabel": "Send Immediately",
+        "sendImmediatelyTooltip": "The message will be sent as soon as you confirm.",
+        "scheduleLaterLabel": "Schedule for a later time",
+        "scheduleLaterTooltip": "Choose a specific date and time to send the message."
+      },
+      "summary": {
+        "header": "Summary",
+        "content": "Content",
+        "audience": "Audience",
+        "allCustomers": "All Customers",
+        "filteredCustomers": "Filtered list of customers",
+        "activeFilters": "Active Filters",
+        "schedule": "Schedule",
+        "immediately": "Immediately"
+      },
+      "options": {
+        "meterStatusActive": "Active",
+        "meterStatusInactive": "Inactive",
+        "packageTypeUsage": "Usage",
+        "packageTypeFixed": "Fixed",
+        "paymentStatusPaid": "Paid",
+        "paymentStatusUnpaid": "Unpaid",
+        "paymentStatusPartiallyPaid": "Partially Paid",
+        "paymentMethodCash": "Cash"
+      },
+      "placeholders": {
+        "selectDate": "Select Date",
+        "selectDateTime": "Select Date & Time",
+        "timeCaption": "Time"
+      },
+      "alerts": {
+        "success": "Message sent/scheduled successfully!",
+        "clearFiltersForAudience": "Advanced filters are active. Clear them to select an audience here.",
+        "clearAudienceForFilters": "A target audience is already selected. Clear it to use advanced filters.",
+        "dueDateRequired": "Please set a Due Date when applying bill filters.",
+        "completeFollowing": "Please complete the following to continue:"
+      },
+      "validation": {
+        "dueDateRequiredWithFilter": "Due date is required when any bill filter is applied.",
+        "contentRequired": "A template or a custom message is required.",
+        "contentExclusive": "Select either a template or a custom message, not both.",
+        "audienceRequired": "An audience is required: broadcast, specific customers, or filters.",
+        "audienceExclusive": "Choose only one audience type: broadcast, customers, or filters.",
+        "scheduleRequired": "Scheduling is required: send immediately or set a date.",
+        "scheduleExclusive": "Cannot 'Send Immediately' and schedule for later."
+      }
+    }
+  },
+  "bills": {
+    "updateBillModal": {
+      "alerts": {
+        "paymentAddedSuccess": "Payment added successfully!",
+        "paymentUpdatedSuccess": "Payment updated successfully!",
+        "paymentDeletedSuccess": "Payment deleted successfully!"
+      },
+      "forms": {
+        "payment": {
+          "amountLabel": "Amount (USD)",
+          "amountPlaceholder": "Enter amount",
+          "methodLabel": "Payment Method",
+          "dateLabel": "Payment Date",
+          "methods": {
+            "cash": "Cash",
+            "whish": "Whish",
+            "omt": "OMT"
+          },
+          "errors": {
+            "amountRequired": "Amount is required.",
+            "amountPositive": "Amount must be positive.",
+            "amountMax": "Amount cannot exceed the available balance of ${{max}}.",
+            "dateRequired": "Payment date is required."
+          }
+        }
+      },
+      "imagePreviewModal": {
+        "title": "Bill Preview"
+      },
+      "paymentCard": {
+        "via": "via",
+        "paidOn": "Paid on:"
+      },
+      "addPaymentForm": {
+        "title": "Add a New Payment",
+        "payFullBtn": "Pay Full",
+        "addPaymentBtn": "Add Payment",
+        "addingBtn": "Adding..."
+      },
+      "updateBillModal": {
+        "title": "Manage Bill for {{customerName}}",
+        "fetchError": "Failed to fetch bill details. Please try again.",
+        "summary": {
+          "title": "Payment Summary",
+          "totalDue": "Total Due:",
+          "totalPaid": "Total Paid:",
+          "amountRemaining": "Amount Remaining:"
+        },
+        "addNewPaymentBtn": "Add New Payment",
+        "paymentHistory": "Payment History",
+        "noPayments": "No payments have been recorded for this bill yet.",
+        "fullyPaid": "This bill is fully paid!"
+      },
+      "deleteConfirm": {
+        "title": "Delete Payment",
+        "body": "Are you sure you want to delete the payment of ${{amount}}?"
+      }
+    },
+
+    "title": "Bills",
+    "downloadBills": "Download Bills",
+    "generateBills": "Generate Bills",
+    "downloadInProgress": "Download in Progress...",
+    "downloadReadyFile": "Download Ready File",
+    "searchByCustomerPlaceholder": "Search by customer...",
+    "filterByStatusPlaceholder": "Filter by Status",
+    "paymentMethodPlaceholder": "Payment Method",
+    "customer": "Customer",
+    "amountLbp": "Amount (LBP)",
+    "amountUsd": "Amount ($)",
+    "status": "Status",
+    "noBillsAvailable": "No bills are available.",
+    "deleteBillTitle": "Delete Bill",
+    "deleteConfirmation": "Are you sure you want to delete this bill? This action cannot be undone.",
+    "deleteSuccess": "Bill deleted successfully.",
+    "statuses": {
+      "paid": "Paid",
+      "unpaid": "Unpaid",
+      "partially_paid": "Partially Paid"
+    },
+    "paymentMethods": {
+      "cash": "Cash",
+      "whish": "Whish",
+      "omt": "OMT"
+    },
+    "downloadModal": {
+      "title": "Download Bills",
+      "initial": {
+        "description": "Select the billing month for the bills you wish to download as a single ZIP file.",
+        "label": "Billing Month"
+      },
+      "pending": {
+        "title": "Generation in Progress",
+        "body": "The bills PDF is currently being generated. This can take some time.",
+        "footer": "You can safely close this window. We'll notify you when it's complete."
+      },
+      "success": {
+        "title": "Download Ready!",
+        "body": "Your requested bills PDF is ready for download."
+      },
+      "failure": {
+        "title": "Generation Failed",
+        "body": "The previous request failed. Please try starting a new download."
+      },
+      "checkingStatus": "Checking status...",
+      "buttons": {
+        "download": "Download Bills",
+        "downloading": "Downloading...",
+        "startNew": "Start New Download",
+        "downloadReady": "Download Ready File",
+        "tryNew": "Try a New Download"
+      }
+    },
+    "messages": {
+      "noBillsForMonth": "No bills available for the selected month.",
+      "generationStarted": "PDF generation started! You will receive a notification when it's ready.",
+      "unexpectedResponse": "Unexpected response from server.",
+      "generationError": "Something went wrong while starting generation.",
+      "downloadStarting": "Your download is starting in a new tab!",
+      "downloadUrlMissing": "Download URL is not available."
+    },
+    "generateBillsModal": {
+      "titles": {
+        "rates": "Set Billing Rates",
+        "generate": "Generate Monthly Bills",
+        "results": "Generation Results"
+      },
+      "rates": {
+        "selectMonthLabel": "Select Billing Month",
+        "mountainKwhRate": "Mountain Zone kWh Rate ($)",
+        "coastalKwhRate": "Coastal Zone kWh Rate ($)",
+        "dollarRate": "Dollar to LBP Exchange Rate",
+        "fixedSubHours": "Fixed Subscription Hours count",
+        "fixedSubRate": "Fixed Subscription Hourly Rate (LBP)"
+      },
+      "tooltips": {
+        "mountainKwhRate": "The cost per kilowatt-hour for properties in the mountain zone.",
+        "coastalKwhRate": "The cost per kilowatt-hour for properties in the coastal zone.",
+        "dollarRate": "The exchange rate used to convert the final bill from USD to LBP.",
+        "fixedSubHours": "The number of hours to bill for fixed subscription packages.",
+        "fixedSubRate": "The hourly rate (in LBP) for fixed subscription packages."
+      },
+      "results": {
+        "successTitle": "Generation Successful!",
+        "missingTitle": "Missing Meter Readings",
+        "missingPrompt": "Generation cannot proceed because some meters are missing readings. You can <strong>force generate</strong> bills for meters that have readings and skip the others.",
+        "unverifiedTitle": "Unverified Meter Readings",
+        "unverifiedPrompt": "Generation is paused due to unverified readings. You can <strong>force generate</strong> bills using these unverified readings, but it is not recommended.",
+        "cannotProceedTitle": "Action Required",
+        "cannotProceedPrompt": "Generation cannot proceed. Please go to the readings page to verify the pending meter readings for this month.",
+        "noNewBillsTitle": "Generation Complete",
+        "noNewBillsMessage": "The generation process finished, but no new bills were created. This may be because they already exist."
+      },
+      "metrics": {
+        "title": "Generation Metrics",
+        "totalActive": "Total Active Meters",
+        "billsCreated": "Bills Created",
+        "alreadyExist": "Bills Already Exist",
+        "missingReadings": "Meters Without Readings",
+        "unverifiedReadings": "Meters with Unverified Readings",
+        "skippedMeters": "Skipped Meters"
+      },
+      "forceMissing": "Force Generate (Skip Missing)",
+      "forceUnverified": "Force Generate (Use Unverified)",
+      "goToReadings": "Go to Readings",
+      "messages": {
+        "ratesUpdated": "Rates updated successfully.",
+        "ratesCreated": "Rates created successfully for the selected month.",
+        "generationSuccess": "Bill generation process started successfully.",
+        "generationTimeNote": "Please allow a few minutes for the process to complete."
+      },
+      "errors": {
+        "fetchRatesError": "Failed to fetch rates for the selected month.",
+        "noRateIdError": "Rate ID is missing. Cannot proceed with generation.",
+        "missingReadingsApi": "Missing readings for <1>{{count}}</1> active meters on <3>{{month}}</3>."
+      },
+      "initialInfoText": "You are about to generate bills for all customers for the month of {{month}}.",
+      "confirmProceed": "This will create new, unpaid bills. Are you sure you want to proceed?",
+      "startGeneration": "Start Generation",
+      "missingTitle": "Missing Meter Readings",
+      "missingPrompt": "The system cannot generate bills for <strong>all</strong> customers for {{month}} because some meter readings are missing.",
+      "unverifiedTitle": "Unverified Meter Readings",
+      "unverifiedPrompt": "There are unverified meter readings for the month of {{month}}. It is highly recommended to verify all readings before generating bills.",
+      "unverifiedNote": "Generating bills with unverified readings will mark them as 'verified' and may lead to billing inaccuracies.",
+      "forceGeneration": "Generate Anyway",
+      "validation": {
+        "required": "This field is required",
+        "positive": "The rate must be greater than zero",
+        "minZero": "The rate cannot be negative",
+        "atLeastOneRate": "At least one of the Mountain or Coastal rates must be greater than zero."
+      }
+    }
+  },
+  "forgotPassword": {
+    "title": "Reset Your Password",
+    "phone": {
+      "description": "Enter your phone number, and we'll send a verification code to your WhatsApp.",
+      "label": "Phone Number",
+      "button": "Send Code"
+    },
+    "otp": {
+      "description": "Enter the 4-digit code sent to <1></1><2>+961 {{phoneNumber}}</2>",
+      "label": "Verification Code",
+      "resendTimer": "Resend code in {{seconds}}s",
+      "resendButton": "Resend Code",
+      "verifyButton": "Verify Code"
+    },
+    "password": {
+      "description": "Create a new, strong password for your account.",
+      "newPasswordLabel": "New Password",
+      "confirmPasswordLabel": "Confirm New Password",
+      "resetButton": "Reset Password"
+    },
+    "success": {
+      "title": "Password Reset!",
+      "description": "Your password has been successfully reset. You can now log in with your new password.",
+      "button": "Return to Login"
+    },
+    "notifications": {
+      "otpSent": "OTP sent successfully to your WhatsApp.",
+      "otpVerified": "OTP verified successfully.",
+      "passwordResetSuccess": "Password has been reset successfully!",
+      "newOtpSent": "A new OTP has been sent."
+    },
+    "validations": {
+      "phoneInvalid": "Must be a valid 8-digit Lebanese number",
+      "phoneRequired": "Phone number is required",
+      "otpInvalid": "OTP must be 4 digits",
+      "otpRequired": "OTP is required",
+      "passwordMin": "Password must be at least 8 characters",
+      "passwordPattern": "Must contain one uppercase, one lowercase, and one number",
+      "newPasswordRequired": "New password is required",
+      "passwordsMustMatch": "Passwords must match",
+      "confirmPasswordRequired": "Confirm password is required"
+    }
+  },
+  "rates": {
+    "viewModal": {
+      "title": "View Rates by Year",
+      "yearLabel": "Select Year",
+      "noRates": "No rates found for the selected year.",
+      "fetchError": "Failed to fetch rates. Please try again.",
+      "table": {
+        "month": "Month",
+        "mountainRate": "Mountain Rate (kWh)",
+        "coastalRate": "Coastal Rate (kWh)",
+        "dollarRate": "Dollar Rate"
+      },
+      "footerMessage": {
+        "part1": "To change the upcoming month's rates, navigate to the Generate Bills modal in the",
+        "link": "Bills Page"
+      }
+    }
+  },
+  "readings": {
+    "title": "Readings",
+    "uncollectedTab": "Uncollected",
+    "collectedTab": "Collected",
+    "collectedView": {
+      "verifyAllButton": "Verify All",
+      "searchPlaceholder": "Search by customer...",
+      "statusFilterPlaceholder": "Filter by Status",
+      "areaFilterPlaceholder": "Filter by Area",
+      "noReadings": "No readings available."
+    },
+    "deleteModal": {
+      "title": "Delete Reading",
+      "body": "Are you sure you want to delete the reading for <strong>{{customerName}}</strong>?"
+    },
+    "summary": {
+      "totalActiveMeters": "Total Active Meters",
+      "metersWithReadings": "Meters With Readings",
+      "metersNeedingReadings": "Meters Need Readings",
+      "pendingReadings": "Pending Readings",
+      "verifiedReadings": "Verified Readings"
+    },
+    "verifyModal": {
+      "title": "Verify Reading for {{customerName}}",
+      "loadingDetails": "Loading details...",
+      "fetchError": "Failed to load reading details. Please try again.",
+      "successMessage": "Reading verified successfully!",
+      "scannedImageTitle": "Scanned Image",
+      "imageAlt": "Meter reading for {{customerName}}",
+      "previewAlt": "Preview",
+      "noImage": "No image available for this reading.",
+      "verificationTitle": "Reading Verification",
+      "customerLabel": "Customer:",
+      "previousReadingLabel": "Previous Reading (kWh)",
+      "currentReadingLabel": "Current Reading (kWh)",
+      "verifyingButton": "Verifying...",
+      "verifyButton": "Save & Verify",
+      "validation": {
+        "required": "Current reading is required",
+        "min": "Reading must be >= previous reading ({{value}})"
+      }
+    },
+    "awaitingView": {
+      "searchByCustomerNamePlaceholder": "Search by customer name...",
+      "filterByAreaPlaceholder": "Filter by Area",
+      "customerName": "Customer Name",
+      "area": "Area",
+      "previousReading": "Previous Reading",
+      "manualEntry": "Manual Entry",
+      "addReading": "Add Reading",
+      "noMetersAwaiting": "No meters are awaiting readings."
+    },
+    "addReadingModal": {
+      "addReadingFor": "Add Reading for {{customerName}}",
+      "previousReadingLabel": "Previous Reading (kWh)",
+      "newReadingLabel": "New Reading (kWh)",
+      "enterNewReadingPlaceholder": "Enter new reading",
+      "readingPhotoRequired": "Reading Photo (Required)",
+
+      "messages": {
+        "readingAddedSuccess": "Reading added successfully!"
+      },
+      "yup": {
+        "readingNegative": "Reading cannot be negative",
+        "readingTooLow": "Reading must be >= previous reading ({{value}})",
+        "newReadingRequired": "New reading is required",
+        "photoRequired": "A photo of the reading is required.",
+        "fileTooLarge": "File is too large (max {{size}}MB)",
+        "unsupportedFormat": "Unsupported format. Please upload a JPEG."
+      }
+    },
+    "camera": {
+      "starting": "Starting camera...",
+      "errorPermissionDenied": "Camera permission denied. Please allow camera access in your browser settings.",
+      "errorNoDevice": "No camera device found. Please connect a camera.",
+      "errorDefault": "An unexpected error occurred with the camera."
+    },
+    "verifyAll": {
+      "title": "Confirm Bulk Verification",
+      "confirmationWarning": "You are about to verify all pending readings for the selected month. This action cannot be undone.",
+      "monthLabel": "Month to Verify",
+      "verifying": "Verifying readings...",
+      "resultTitle": "Verification Result",
+      "verifiedCount": "{{count}} reading(s) have been verified.",
+      "successMessage": "Successfully verified {{count}} readings for period {{period}}",
+      "noPendingMessage": "No pending readings found for period {{period}}"
+    },
+    "table": {
+      "customer": "Customer",
+      "area": "Area",
+      "previous": "Previous",
+      "current": "Current",
+      "status": "Status",
+      "actions": "Actions"
+    }
+  },
+  "months": {
+    "january": "January",
+    "february": "February",
+    "march": "March",
+    "april": "April",
+    "may": "May",
+    "june": "June",
+    "july": "July",
+    "august": "August",
+    "september": "September",
+    "october": "October",
+    "november": "November",
+    "december": "December"
+  }
+}

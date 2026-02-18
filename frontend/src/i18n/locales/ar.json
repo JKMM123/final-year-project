@@ -1,0 +1,1079 @@
+{
+  "common": {
+    "welcome": "مرحباً بك في التطبيق الدولي!",
+    "logout": "تسجيل الخروج",
+    "language": "اللغة",
+    "english": "الإنجليزية",
+    "arabic": "العربية",
+    "loading": "جاري التحميل...",
+    "save": "حفظ",
+
+    "loadingBill": "جاري تحميل الفاتورة...",
+    "delete": "حذف",
+    "month": "الشهر",
+    "actions": "الإجراءات",
+    "clear": "مسح",
+    "finish": "إنهاء",
+    "next": "التالي",
+    "back": "رجوع",
+    "loadingModal": "جاري تحميل النافذة...",
+    "edit": "تعديل",
+    "notAvailable": "غير متاح",
+    "cancel": "إلغاء",
+    "saving": "جاري الحفظ...",
+    "saveChanges": "حفظ التغييرات",
+    "field": "الحقل",
+    "invalid": "غير صالح",
+    "create": "إنشاء",
+    "download": "تنزيل",
+    "saveReading": "حفظ القراءة",
+    "changePhoto": "تغيير الصورة",
+    "takePhoto": "التقاط صورة",
+    "uploadPhoto": "رفع صورة",
+    "goBack": "العودة",
+    "confirm": "تأكيد",
+    "confirming": "جاري التأكيد...",
+    "verify": "تحقق",
+    "view": "عرض",
+    "actionsArray": {
+      "verify": "تحقق",
+      "view": "عرض"
+    },
+    "statuses": {
+      "pending": "قيد الانتظار",
+      "verified": "تم التحقق"
+    },
+    "creating": "جاري الإنشاء...",
+    "search": "بحث",
+    "select": "اختر",
+    "all": "الكل",
+    "yes": "نعم",
+    "name": "الاسم",
+    "close": "إغلاق",
+    "sending": "جارٍ الإرسال...",
+    "orSeparator": "أو",
+    "selectPlaceholder": "اختر...",
+    "submitting": "جارٍ الإرسال...",
+
+    "searchAndSelectPlaceholder": "ابحث واختر...",
+    "validations": {
+      "required": "{{field}} مطلوب",
+      "digitsOnly": "يجب أن يتكون من أرقام فقط",
+      "minLength": "يجب أن يتكون من {{min}} أرقام على الأقل",
+      "mustBeNumber": "يجب أن يكون رقمًا",
+      "noNegative": "لا يمكن أن يكون سالبًا",
+      "rateRequired": "السعر مطلوب",
+      "mustBePositive": "يجب أن يكون الرقم موجبًا"
+    },
+    "errors": {
+      "unknown": "حدث خطأ غير معروف.",
+      "unexpected": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.",
+      "deleteFailed": "فشل في حذف القراءة."
+    }
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "greeting": "مرحباً، {{name}}!",
+    "content": "هذه هي منطقة لوحة التحكم الرئيسية الخاصة بك. سيتم تعديل التخطيط بناءً على اتجاه اللغة المحدد."
+  },
+  "header": {
+    "welcome": "مرحباً، <1>{{username}}</1> ({{role}})",
+    "logout": "تسجيل الخروج"
+  },
+  "sidebar": {
+    "menu": "القائمة",
+    "logout": "تسجيل الخروج",
+    "dashboard": "لوحة التحكم",
+    "users": "المستخدمون",
+    "packages": "الباقات",
+    "meters": "العدادات",
+    "readings": "القراءات",
+    "messages": "الرسائل",
+    "bills": "الفواتير",
+    "fixes": "الصيانة",
+    "areas": "المناطق"
+  },
+  "loginPage": {
+    "title": "تسجيل الدخول إلى حسابك",
+    "usernameLabel": "اسم المستخدم أو الهاتف",
+    "passwordLabel": "كلمة المرور",
+    "submitButton": "تسجيل الدخول",
+    "submittingButton": "جاري تسجيل الدخول...",
+    "forgotPasswordLink": "هل نسيت كلمة المرور؟",
+    "contactHelpText": "ليس لديك حساب أو تواجه مشكلة؟",
+    "contactWhatsAppButton": "تواصل معنا عبر واتساب",
+    "validation": {
+      "usernameRequired": "اسم المستخدم أو الهاتف مطلوب",
+      "passwordRequired": "كلمة المرور مطلوبة"
+    }
+  },
+  "dashboardPage": {
+    "loadingText": "جاري تحميل لوحة التحكم...",
+    "summaryTitle": "ملخص لوحة التحكم",
+    "metersTitle": "العدادات",
+    "readingsTitle": "القراءات",
+    "billsTitle": "الفواتير والمدفوعات",
+    "unpaidTitle": "الفواتير غير المدفوعة",
+    "meters": {
+      "totalActive": "إجمالي العدادات النشطة",
+      "activeFixed": "عدادات الاشتراك النشطة",
+      "activeUsage": "عدادات الاستهلاك النشطة",
+      "totalInactive": "إجمالي العدادات غير النشطة",
+      "withoutReadings": "عدادات بدون قراءات",
+      "total": "إجمالي العدادات"
+    },
+    "readings": {
+      "verified": "القراءات الموثقة",
+      "pending": "القراءات المعلقة"
+    },
+    "bills": {
+      "generated": "الفواتير الصادرة",
+      "paidTotal": "الفواتير المدفوعة (الإجمالي)",
+      "paidCash": "المدفوعات النقدية",
+      "paidWhish": "المدفوعات عبر Whish",
+      "paidOmt": "المدفوعات عبر OMT",
+      "unpaid": "الفواتير غير المدفوعة",
+      "partiallyPaid": "الفواتير المدفوعة جزئياً"
+    },
+    "earnings": {
+      "title": "الأرباح",
+      "totalEarnings": "إجمالي الأرباح",
+      "totalUsd": "إجمالي الأرباح (دولار)",
+      "totalLbp": "إجمالي الأرباح (ليرة)",
+      "breakdownTitle": "تفصيل الأرباح حسب طريقة الدفع",
+      "earningsUsd": "الأرباح (دولار)",
+      "earningsLbp": "الأرباح (ليرة)",
+      "cash": "نقداً",
+      "whish": "Whish",
+      "omt": "OMT"
+    },
+    "unpaid": {
+      "totalUsd": "إجمالي غير المدفوع (دولار)",
+      "totalLbp": "إجمالي غير المدفوع (ليرة)",
+      "thisMonthUsd": "غير مدفوع هذا الشهر (دولار)",
+      "thisMonthLbp": "غير مدفوع هذا الشهر (ليرة)"
+    }
+  },
+
+  "usersPage": {
+    "title": "المستخدمون",
+    "addUserButton": "إضافة مستخدم",
+    "searchPlaceholder": "ابحث بالاسم...",
+    "roleFilterPlaceholder": "فلترة حسب الدور",
+    "roles": {
+      "all": "كل الأدوار",
+      "system": "النظام",
+      "user": "مستخدم",
+      "admin": "مدير"
+    },
+    "table": {
+      "headerUsername": "اسم المستخدم",
+      "headerPhone": "رقم الهاتف",
+      "headerRole": "الدور",
+      "headerActions": "الإجراءات",
+      "noUsersFound": "لم يتم العثور على مستخدمين."
+    },
+    "modals": {
+      "deleteTitle": "حذف مستخدم",
+      "deleteBody": "هل أنت متأكد أنك تريد حذف المستخدم <1>{{username}}</1>؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "alerts": {
+      "deleteSuccess": "تم حذف المستخدم \"{{username}}\" بنجاح."
+    }
+  },
+
+  "users": {
+    "addUserTitle": "إضافة مستخدم جديد",
+    "editUserTitle": "تعديل المستخدم: {{username}}",
+    "createUser": "إنشاء مستخدم",
+    "usernameLabel": "اسم المستخدم",
+    "usernamePlaceholder": "أدخل اسم المستخدم",
+    "phoneNumberLabel": "رقم الهاتف",
+    "phoneNumberPlaceholder": "أدخل رقم الهاتف",
+    "roleLabel": "الصلاحية",
+    "rolePlaceholder": "اختر صلاحية",
+    "roles": {
+      "admin": "مدير",
+      "user": "مستخدم"
+    },
+    "validation": {
+      "usernameTooShort": "قصير جداً!",
+      "usernameRequired": "اسم المستخدم مطلوب",
+      "phoneOnlyDigits": "يجب أن يتكون من أرقام فقط",
+      "phoneMinDigits": "يجب أن لا يقل عن 8 أرقام",
+      "phoneRequired": "رقم الهاتف مطلوب",
+      "roleRequired": "الصلاحية مطلوبة"
+    },
+    "messages": {
+      "userCreatedSuccess": "تم إنشاء المستخدم بنجاح!",
+      "userUpdatedSuccess": "تم تحديث المستخدم بنجاح!",
+      "userCreateFailed": "فشل إنشاء المستخدم.",
+      "userUpdateFailed": "فشل تحديث المستخدم."
+    }
+  },
+
+  "areas": {
+    "title": "المناطق",
+    "addArea": "إضافة منطقة",
+    "goToAreasPage": "الانتقال إلى صفحة المناطق",
+    "searchPlaceholder": "البحث باسم المنطقة...",
+    "table": {
+      "name": "اسم المنطقة",
+      "elevation": "الارتفاع (م)",
+      "actions": "الإجراءات"
+    },
+    "noAreasFound": "لم يتم العثور على مناطق.",
+    "deleteModal": {
+      "title": "حذف المنطقة",
+      "body": "هل أنت متأكد أنك تريد حذف <strong>{{areaName}}</strong>؟ لا يمكن التراجع عن هذا الإجراء.",
+      "confirmText": "حذف"
+    },
+    "notifications": {
+      "updateSuccess": "تم تحديث المنطقة بنجاح!",
+      "deleteSuccess": "تم حذف المنطقة \"{{areaName}}\".",
+      "createSuccess": "تم إنشاء المنطقة بنجاح!"
+    },
+    "createForm": {
+      "placeholders": {
+        "name": "اسم المنطقة",
+        "elevation": "الارتفاع (م)"
+      },
+      "elevationTooltip": "يستخدم الارتفاع لتحديد ما إذا كانت المنطقة فوق أو تحت 700 متر."
+    },
+    "validation": {
+      "namePattern": "يسمح فقط بالحروف العربية والإنجليزية والمسافات",
+      "nameRequired": "اسم المنطقة مطلوب",
+      "elevationNumber": "يجب أن يكون الارتفاع رقمًا",
+      "elevationPositive": "يجب أن يكون رقمًا موجبًا",
+      "elevationRequired": "الارتفاع مطلوب"
+    }
+  },
+
+  "fixes": {
+    "title": "إدارة الإصلاحات",
+    "addFix": "إضافة إصلاح",
+    "searchPlaceholder": "البحث باسم العميل...",
+    "table": {
+      "customerName": "اسم العميل",
+      "fixDate": "تاريخ الإصلاح",
+      "cost": "التكلفة"
+    },
+    "noFixesFound": "لم يتم العثور على إصلاحات للمعايير المحددة.",
+    "deleteModal": {
+      "title": "حذف الإصلاح",
+      "body": "هل أنت متأكد أنك تريد حذف الإصلاح الخاص بالعميل <strong>{{customerName}}</strong> بتاريخ {{fixDate}}؟ لا يمكن التراجع عن هذا الإجراء.",
+      "confirmText": "حذف"
+    },
+    "notifications": {
+      "deleteSuccess": "تم حذف الإصلاح الخاص بالعميل \"{{customerName}}\"."
+    },
+    "addTitle": "إضافة تصليح جديد",
+    "editTitle": "تعديل بيانات التصليح",
+    "customerMeterLabel": "العميل / العداد",
+    "customerNameLabel": "اسم العميل",
+    "noCustomersFound": "لم يتم العثور على عملاء.",
+    "selected": "المحدد",
+    "fixDateLabel": "تاريخ التصليح",
+    "descriptionLabel": "الوصف",
+    "costLabel": "($)التكلفة",
+    "costPlaceholder": "أدخل التكلفة",
+    "createFix": "إنشاء تصليح",
+    "creating": "جاري الإنشاء...",
+    "saveChanges": "حفظ التغييرات",
+    "saving": "جاري الحفظ...",
+    "createSuccess": "تم إنشاء التصليح بنجاح!",
+    "updateSuccess": "تم تحديث التصليح بنجاح!",
+    "searchError": "فشل البحث عن العملاء.",
+    "validation": {
+      "meterRequired": "يجب اختيار عميل/عداد.",
+      "dateRequired": "تاريخ التصليح مطلوب.",
+      "descriptionRequired": "الوصف مطلوب.",
+      "costRequired": "التكلفة مطلوبة.",
+      "costType": "يجب أن تكون التكلفة رقمًا.",
+      "costPositive": "يجب أن تكون التكلفة رقمًا موجبًا."
+    }
+  },
+  "packages": {
+    "title": "باقات الكهرباء",
+    "viewRates": "رؤية الأسعار",
+    "addPackage": "إضافة باقة",
+    "goToPackagesPage": "الانتقال إلى صفحة الباقات",
+    "searchPlaceholder": "البحث بالأمبير...",
+    "tooltips": {
+      "amperage": "الأمبيراج تحدد سعة التيار للحزمة.",
+      "activation_fee": " رسوم التفعيل هي رسم ثابت يُدفع لمجرد وجود عداد، بغض النظر عن الاستهلاك.",
+      "fixed_fee": "الرسوم الثابتة هي رسوم شهرية تُطبق بغض النظر عن الاستهلاك لالعملاء بدون عدادات ."
+    },
+    "table": {
+      "amperage": "الأمبير",
+      "activationFee": "رسوم التفعيل",
+      "fixedFee": "الرسوم الثابتة",
+      "meters": "العدادات"
+    },
+    "noPackagesFound": "لم يتم العثور على باقات.",
+    "deleteModal": {
+      "title": "حذف الباقة",
+      "body": "هل أنت متأكد أنك تريد حذف باقة <strong>{{amperage}} أمبير</strong>؟ لا يمكن التراجع عن هذا الإجراء.",
+      "confirmText": "حذف"
+    },
+    "notifications": {
+      "deleteSuccess": "تم حذف باقة {{amperage}} أمبير بنجاح."
+    },
+
+    "addTitle": "إضافة باقة جديدة",
+    "editTitle": "تعديل الباقة: {{amperage}} أمبير",
+    "amperageLabel": "امبيراج (أمبير)",
+    "activationFeeLabel": "رسم التفعيل (ل.ل.)",
+    "fixedFeeLabel": "الرسم الشهري الثابت بدون عداد(ل.ل.)",
+    "enterAmperage": "أدخل التيار",
+    "enterActivationFee": "أدخل رسم التفعيل",
+    "enterFixedFee": "أدخل الرسم الشهري الثابت",
+    "createPackage": "إنشاء باقة",
+    "validation": {
+      "positive": "يجب أن تكون القيمة موجبة",
+      "negative": "لا يمكن أن تكون القيمة سالبة",
+      "amperageRequired": "التيار مطلوب",
+      "activationFeeRequired": "رسم التفعيل مطلوب",
+      "fixedFeeRequired": "الرسم الشهري الثابت مطلوب"
+    },
+    "messages": {
+      "packageCreatedSuccess": "تم إنشاء الباقة بنجاح!",
+      "packageUpdatedSuccess": "تم تحديث الباقة بنجاح!",
+      "packageCreateFailed": "فشل إنشاء الباقة.",
+      "packageUpdateFailed": "فشل تحديث الباقة."
+    }
+  },
+
+  "meters": {
+    "title": "العدادات",
+    "tools": "أدوات العداد",
+    "addMeter": "إضافة عداد",
+    "searchPlaceholder": "البحث باسم العميل...",
+    "noMetersFound": "لم يتم العثور على عدادات.",
+    "filter": {
+      "area": "التصنيف حسب المنطقة",
+      "package": "التصنيف حسب الباقة",
+      "packageType": "التصنيف حسب نوع الباقة",
+      "status": "التصنيف حسب الحالة",
+      "moreFilters": "خيارات إضافية"
+    },
+    "status": {
+      "active": "فعّال",
+      "inactive": "غير فعّال"
+    },
+    "packageTypeWord": "نوع الباقة",
+    "packageType": {
+      "fixed": "ثابت",
+      "usage": "حسب الاستهلاك"
+    },
+    "table": {
+      "customerName": "اسم العميل",
+      "phone": "الهاتف",
+      "address": "العنوان",
+      "amperage": "الأمبير",
+      "area": "المنطقة"
+    },
+    "actions": {
+      "edit": "تعديل العداد",
+      "delete": "حذف العداد",
+      "getQrCode": "الحصول على رمز QR",
+      "viewStatement": "عرض كشف الحساب"
+    },
+    "deleteModal": {
+      "title": "حذف العداد",
+      "body": "هل أنت متأكد أنك تريد حذف العداد الخاص بـ <strong>{{customerName}}</strong>؟"
+    },
+    "notifications": {
+      "deleteSuccess": "تم حذف العداد الخاص بـ \"{{customerName}}\"."
+    },
+
+    "addMeterTitle": "إضافة عداد جديد",
+    "editMeterTitle": "تعديل العداد",
+    "createMeter": "إنشاء عداد",
+    "customerFullName": "اسم العميل الكامل",
+    "customerFullNamePlaceholder": "أدخل الاسم الكامل",
+
+    "customerPhoneNumber": "رقم هاتف العميل",
+    "customerPhoneNumberPlaceholder": "أدخل رقم الهاتف",
+    "address": "العنوان / تفاصيل المبنى",
+    "addressPlaceholder": "أدخل العنوان أو رقم المبنى",
+    "statusWord": "الحالة",
+    "statusActive": "فعّال",
+    "statusInactive": "غير فعّال",
+    "area": "المنطقة",
+    "package": "الباقة",
+    "amperagePackage": "باقة {{amperage}} أمبير",
+    "packageTypeTooltip": "'الاستهلاك' تتم الفوترة بناءً على kWh المستهلكة. 'الثابتة' تتم الفوترة بسعر شهري ثابت.",
+    "packageTypeUsage": "حسب الاستهلاك",
+    "packageTypeFixed": "سعر ثابت",
+    "initialReading": "القراءة الأولية",
+    "initialReadingKwh": "القراءة الأولية (كيلوواط/ساعة)",
+    "initialReadingPlaceholder": "أدخل القراءة الأولية",
+    "toolsModal": {
+      "title": "أدوات العداد",
+      "downloadTab": {
+        "title": "تنزيل كل رموز QR",
+        "heading": "تنزيل رموز QR كملف ZIP",
+        "description": "انقر على الزر أدناه لطلب ملف ZIP يحتوي على رمز QR لكل عداد في النظام.",
+        "fetchError": "تعذر استرداد رابط التنزيل. يرجى المحاولة مرة أخرى.",
+        "requestBtn": "طلب ملف رموز QR",
+        "requestingBtn": "جارٍ طلب الملف...",
+        "downloadBtn": "تنزيل ملف ZIP"
+      },
+      "uploadTab": {
+        "title": "رفع ملف العدادات",
+        "heading": "رفع العدادات من ملف",
+        "requirements": {
+          "title": "متطلبات الملف",
+          "fields": {
+            "fullName": {
+              "label": "full name",
+              "description": "الاسم الكامل للعميل (مثال: {{example}})"
+            },
+            "phoneNumber": {
+              "label": "phone number",
+              "description": "رقم الهاتف (مثال: {{example}})"
+            },
+            "address": {
+              "label": "address",
+              "description": "العنوان أو رقم المبنى (مثال: {{example}})"
+            },
+            "amperage": {
+              "label": "amperage",
+              "description": "عدد الأمبيرات (مثال: {{example1}}، {{example2}})"
+            },
+            "area": {
+              "label": "area",
+              "description": "اسم المنطقة (مثال: {{example1}}، {{example2}})"
+            },
+            "packageType": {
+              "label": "package type",
+              "description": "يجب أن يكون {{example1}} أو {{example2}}"
+            },
+            "initialReading": {
+              "label": "initial reading",
+              "description": "قراءة العداد الأولية (مثال: {{example1}}، {{example2}})"
+            }
+          },
+          "acceptedFormats": "الصيغ المقبولة:",
+          "columnWarning": "تأكد من تطابق أسماء الأعمدة تمامًا."
+        },
+        "fileInputLabel": "اختر ملف .csv أو .xlsx",
+        "successMessage": "تم رفع الملف بنجاح!",
+        "genericError": "فشل الرفع",
+        "errorAlert": {
+          "title": "فشل الرفع",
+          "description": "تم العثور على الأخطاء التالية في ملفك:"
+        },
+        "uploadBtn": "رفع الملف",
+        "uploadingBtn": "جارٍ الرفع..."
+      },
+      "closeBtn": "إغلاق"
+    },
+    "qrModal": {
+      "qrCodeTitle": "رمز الاستجابة السريعة للعداد",
+      "qrCodeLoadError": "فشل تحميل رمز الاستجابة السريعة.",
+      "qrCodeAltText": "رمز الاستجابة السريعة للعداد {{meterId}}"
+    },
+    "statementModal": {
+      "title": "كشف حساب",
+      "customer": "الزبون",
+      "phone": "الهاتف",
+      "selectYear": "اختر السنة",
+      "yearSummaryTitle": "ملخص السنة",
+      "totalBilled": "إجمالي الفواتير",
+      "usage": "الاستهلاك (ك/س)",
+      "fixes": " تصليحات ($)",
+      "totalPaid": "إجمالي المدفوع",
+      "totalUnpaid": "إجمالي غير المدفوع",
+      "totalFixes": "تكلفة التصليحات",
+      "completionRate": "نسبة إنجاز الدفع",
+      "monthlyBreakdown": "التفاصيل الشهرية",
+      "month": "الشهر",
+      "status": "الحالة",
+      "amountUsd": "المبلغ (دولار)",
+      "unpaidUsd": "غير مدفوع (دولار)",
+      "prevReading": "القراءة السابقة",
+      "currentReading": "القراءة الحالية",
+      "kwhRate": "سعر الكيلواط",
+      "dollarRate": "سعر الصرف",
+      "activationFee": "رسم الإشتراك (ل.ل)",
+      "noBillExists": "لم يتم إصدار فاتورة لهذا الشهر.",
+      "noDataAvailable": "لا توجد بيانات كشف حساب للسنة المختارة.",
+      "billStatus": {
+        "paid": "مدفوعة",
+        "unpaid": "غير مدفوعة",
+        "partially_paid": "مدفوعة جزئياً",
+        "no_bill": "لا يوجد فاتورة"
+      },
+      "errors": {
+        "fetchFailed": "فشل في جلب كشف الحساب. يرجى المحاولة مرة أخرى."
+      },
+      "payBills": "دفع كل الفواتير",
+      "payBill": "دفع ",
+      "printStatement": "طباعة الكشف",
+      "printing": "جارٍ الطباعة...",
+      "payAllBillsModal": {
+        "title": "دفع جميع الفواتير غير المسددة",
+        "disclaimer": "أنت على وشك تحديد جميع الفواتير غير المسددة لهذا العداد كـ 'مدفوعة'. هذا الإجراء لا يمكن التراجع عنه.",
+        "paymentMethodLabel": "طريقة الدفع",
+        "paymentMethodPlaceholder": "اختر طريقة الدفع...",
+        "successMessage": "تم تحديد جميع الفواتير غير المسددة كمدفوعة بنجاح.",
+        "paymentMethods": {
+          "wish": "Whish",
+          "cash": "Cash",
+          "omt": "OMT"
+        },
+        "errors": {
+          "noMethodSelected": "يرجى اختيار طريقة الدفع قبل التأكيد."
+        }
+      }
+    }
+  },
+
+  "messages": {
+    "connectWhatsapp": "وصل واتساب",
+    "whatsappConnected": "واتساب متصل",
+    "loadingSessionStatus": "جارٍ التحقق من حالة واتساب...",
+    "meterCreated": "تم إنشاء العداد بنجاح!",
+    "meterUpdated": "تم تحديث العداد بنجاح!",
+    "managePhoneNumberWord": "إدارة رقم الهاتف",
+    "messageTemplates": "قوالب الرسائل",
+    "sendMessage": "إرسال رسالة",
+    "createTemplate": "إنشاء قالب",
+    "searchByNamePlaceholder": "ابحث باسم القالب...",
+    "messagePreview": "معاينة الرسالة",
+    "noTemplatesFound": "لم يتم العثور على قوالب.",
+    "deleteTemplateTitle": "حذف القالب",
+    "deleteConfirmation": "هل أنت متأكد أنك تريد حذف القالب <strong>\"{{name}}\"</strong>؟ لا يمكن التراجع عن هذا الإجراء.",
+    "deleteSuccess": "تم حذف القالب \"{{name}}\" بنجاح.",
+    "managePhoneNumber": {
+      "backButton": "العودة إلى القوالب",
+      "errors": {
+        "alreadyRegistered": "رقم الهاتف هذا مسجل بالفعل. امسح رمز الاستجابة السريعة أدناه للاتصال.",
+        "statusFetchFailed": "تعذر استرداد حالة الجلسة. يرجى المحاولة مرة أخرى لاحقًا."
+      },
+      "notifications": {
+        "disconnected": "تم قطع الاتصال بنجاح."
+      },
+      "form": {
+        "title": "ربط رقم واتساب الخاص بك",
+        "description": "أدخل اسمك ورقم هاتف واتساب لإنشاء رمز الاستجابة السريعة. ستحتاج إلى مسح هذا الرمز بهاتفك لربط حسابك لتلقي الإشعارات.",
+        "nameLabel": "الاسم",
+        "phoneLabel": "رقم واتساب",
+        "phonePlaceholder": "مثال: 71916133",
+        "button": "إنشاء رمز QR",
+        "validations": {
+          "nameRequired": "الاسم مطلوب",
+          "phoneInvalid": "أدخل رقمًا لبنانيًا صالحًا (مثال: 71916133)",
+          "phoneRequired": "رقم الهاتف مطلوب"
+        }
+      },
+      "qr": {
+        "title": "امسح للاتصال",
+        "description": "افتح واتساب على هاتفك، اذهب إلى <1>الإعدادات > الأجهزة المرتبطة</1>، وامسح هذا الرمز.",
+        "expiryMessage": "تنتهي صلاحية رمز QR خلال <1>{{timeLeft}}</1> ثانية.",
+        "refreshButton": "تحديث رمز QR"
+      },
+      "connecting": {
+        "title": "جاري الاتصال...",
+        "description": "جاري إنهاء الاتصال، يرجى الانتظار."
+      },
+      "connected": {
+        "title": "تم الاتصال بنجاح!",
+        "description": "هاتفك مرتبط الآن وقادر على إرسال الرسائل وتلقي الإشعارات.",
+        "disconnectButton": "قطع اتصال الرقم"
+      },
+      "disconnectModal": {
+        "title": "قطع اتصال رقم الهاتف",
+        "body": "هل أنت متأكد أنك تريد قطع الاتصال؟ سيؤدي هذا إلى تسجيل خروجك من جلسة واتساب الحالية وستتوقف عن تلقي الإشعارات.",
+        "confirmText": "نعم، اقطع الاتصال",
+        "confirmingText": "جاري قطع الاتصال..."
+      }
+    },
+    "modals": {
+      "editTemplate": "تعديل القالب",
+      "createNewTemplate": "إنشاء قالب جديد",
+      "templateNameLabel": "اسم القالب",
+      "templateNamePlaceholder": "مثال: تذكير الفاتورة الشهرية",
+      "messageLabel": "الرسالة",
+      "messagePlaceholder": "اكتب رسالتك هنا واسحب العناصر النائبة...",
+      "placeholdersTitle": "العناصر النائبة",
+      "dragInstruction": "انقر على أي عنصر لإدخاله في الرسالة  ",
+      "createTemplateButton": "إنشاء القالب"
+    },
+    "placeholders": {
+      "customerData": "بيانات العميل",
+      "billData": "بيانات الفاتورة",
+      "meterData": "بيانات العداد"
+    },
+    "alerts": {
+      "templateUpdated": "تم تحديث القالب بنجاح!",
+      "templateCreated": "تم إنشاء القالب بنجاح!"
+    },
+    "validation": {
+      "templateNameRequired": "اسم القالب مطلوب.",
+      "messageRequired": "محتوى الرسالة مطلوب."
+    },
+    "sendMessageModal": {
+      "summary": {
+        "header": "ملخص",
+        "content": "المحتوى",
+        "audience": "الجمهور",
+        "allCustomers": "جميع العملاء",
+        "filteredCustomers": "قائمة عملاء مفلترة",
+        "activeFilters": "الفلاتر النشطة",
+        "schedule": "الجدول الزمني",
+        "immediately": "فوراً"
+      },
+
+      "title": "إرسال رسالة جديدة",
+      "sendMessageButton": "إرسال الرسالة",
+      "advancedFilterSeparator": "أو استخدم الفلاتر المتقدمة",
+      "step1": {
+        "header": "الخطوة 1: محتوى الرسالة",
+        "templateLabel": "القالب",
+        "templateTooltip": "اختر قالب رسالة محدد مسبقًا.",
+        "customMessageLabel": "رسالة مخصصة",
+        "customMessageTooltip": "اكتب رسالة مخصصة بدلاً من استخدام قالب."
+      },
+      "step2": {
+        "header": "الخطوة 2: الجمهور المستهدف",
+        "broadcastLabel": "إرسال إلى جميع المشتركين",
+        "broadcastTooltip": "إرسال هذه الرسالة إلى كل مشترك نشط في النظام.",
+        "specificCustomersLabel": "مشتركون محددون",
+        "specificCustomersTooltip": "ابحث واختر مشتركًا واحدًا أو أكثر.",
+        "audienceSelection": "تحديد الجمهور"
+      },
+      "step3": {
+        "header": "جدولة الإرسال",
+        "meterFiltersHeader": "فلاتر العداد",
+        "areasLabel": "المنطقة (المناطق)",
+        "areasTooltip": "تصفية المشتركين حسب منطقتهم الجغرافية.",
+        "packagesLabel": "الباقة (الباقات)",
+        "packagesTooltip": "تصفية المشتركين حسب الأمبير.",
+        "meterStatusLabel": "حالة العداد",
+        "meterStatusTooltip": "تصفية العدادات حسب ما إذا كانت نشطة أو غير نشطة.",
+        "packageTypeLabel": "نوع الباقة",
+        "packageTypeTooltip": "تصفية حسب نوع فوترة الباقة: على الاستهلاك أو سعر ثابت.",
+        "billFiltersHeader": "فلاتر الفواتير",
+        "paymentStatusLabel": "حالة الدفع",
+        "paymentStatusTooltip": "تصفية الفواتير حسب ما إذا كانت مدفوعة أو غير مدفوعة.",
+        "dueDateLabel": "تاريخ الاستحقاق (شهر/سنة)",
+        "dueDateTooltip": "استهداف الفواتير بهذا التاريخ. مطلوب إذا استخدمت أي فلتر للفواتير.",
+        "paymentMethodLabel": "طريقة الدفع",
+        "paymentMethodTooltip": "تضييق نطاق الفواتير المدفوعة حسب طريقة الدفع (نقدًا، OMT، WISH).",
+        "overdueOnlyLabel": "استهداف الفواتير المتأخرة فقط",
+        "overdueOnlyTooltip": "استهداف الفواتير التي تجاوزت تاريخ استحقاقها فقط."
+      },
+      "step4": {
+        "sendImmediatelyLabel": "إرسال فوراً",
+        "sendImmediatelyTooltip": "سيتم إرسال الرسالة بمجرد التأكيد.",
+        "scheduleLaterLabel": "جدولة لوقت لاحق",
+        "scheduleLaterTooltip": "اختر تاريخًا ووقتًا محددين لإرسال الرسالة."
+      },
+      "session": {
+        "notConnectedTitle": "واتساب غير متصل",
+        "notConnectedMessage": "لإرسال الرسائل، يجب عليك أولاً ربط رقم هاتف واتساب الخاص بك.",
+        "connectButton": "ربط رقم الهاتف"
+      },
+      "options": {
+        "meterStatusActive": "نشط",
+        "meterStatusInactive": "غير نشط",
+        "packageTypeUsage": "على الاستهلاك",
+        "packageTypeFixed": "سعر ثابت",
+        "paymentStatusPaid": "مدفوع",
+        "paymentStatusUnpaid": "غير مدفوع",
+        "paymentStatusPartiallyPaid": "مدفوع جزئيًا",
+        "paymentMethodCash": "نقدًا"
+      },
+      "placeholders": {
+        "selectDate": "اختر التاريخ",
+        "selectDateTime": "اختر التاريخ والوقت",
+        "timeCaption": "الوقت"
+      },
+      "alerts": {
+        "success": "تم إرسال/جدولة الرسالة بنجاح!",
+        "clearFiltersForAudience": "الفلاتر المتقدمة نشطة. قم بإلغائها لاختيار جمهور من هنا.",
+        "clearAudienceForFilters": "تم اختيار جمهور مستهدف بالفعل. قم بإلغائه لاستخدام الفلاتر المتقدمة.",
+        "dueDateRequired": "يرجى تحديد تاريخ استحقاق عند تطبيق فلاتر الفواتير.",
+        "completeFollowing": "يرجى إكمال ما يلي للمتابعة:"
+      },
+      "validation": {
+        "dueDateRequiredWithFilter": "تاريخ الاستحقاق مطلوب عند تطبيق أي فلتر للفواتير.",
+        "contentRequired": "مطلوب قالب أو رسالة مخصصة.",
+        "contentExclusive": "اختر إما قالبًا أو رسالة مخصصة، وليس كليهما.",
+        "audienceRequired": "مطلوب جمهور: إرسال للجميع، مشتركين محددين، أو فلاتر.",
+        "audienceExclusive": "اختر نوع جمهور واحد فقط: إرسال للجميع، مشتركين، أو فلاتر.",
+        "scheduleRequired": "الجدولة مطلوبة: إرسال فوري أو تحديد تاريخ.",
+        "scheduleExclusive": "لا يمكن 'الإرسال الفوري' والجدولة لوقت لاحق."
+      }
+    }
+  },
+  "bills": {
+    "updateBillModal": {
+      "alerts": {
+        "paymentAddedSuccess": "تمت إضافة الدفعة بنجاح!",
+        "paymentUpdatedSuccess": "تم تحديث الدفعة بنجاح!",
+        "paymentDeletedSuccess": "تم حذف الدفعة بنجاح!"
+      },
+      "forms": {
+        "payment": {
+          "amountLabel": "المبلغ (دولار أمريكي)",
+          "amountPlaceholder": "أدخل المبلغ",
+          "methodLabel": "طريقة الدفع",
+          "dateLabel": "تاريخ الدفع",
+          "methods": {
+            "cash": "نقداً",
+            "whish": "Whish",
+            "omt": "OMT"
+          },
+          "errors": {
+            "amountRequired": "المبلغ مطلوب.",
+            "amountPositive": "يجب أن يكون المبلغ إيجابياً.",
+            "amountMax": "لا يمكن أن يتجاوز المبلغ الرصيد المتاح البالغ ${{max}}.",
+            "dateRequired": "تاريخ الدفع مطلوب."
+          }
+        }
+      },
+      "imagePreviewModal": {
+        "title": "معاينة الفاتورة"
+      },
+      "paymentCard": {
+        "via": "عبر",
+        "paidOn": "دفع في:"
+      },
+      "addPaymentForm": {
+        "title": "إضافة دفعة جديدة",
+        "payFullBtn": "دفع كامل المبلغ",
+        "addPaymentBtn": "إضافة دفعة",
+        "addingBtn": "جاري الإضافة..."
+      },
+      "updateBillModal": {
+        "title": "إدارة فاتورة {{customerName}}",
+        "fetchError": "فشل في جلب تفاصيل الفاتورة. يرجى المحاولة مرة أخرى.",
+        "summary": {
+          "title": "ملخص الدفع",
+          "totalDue": "المجموع المستحق:",
+          "totalPaid": "المجموع المدفوع:",
+          "amountRemaining": "المبلغ المتبقي:"
+        },
+        "addNewPaymentBtn": "إضافة دفعة جديدة",
+        "paymentHistory": "سجل الدفعات",
+        "noPayments": "لم يتم تسجيل أي دفعات لهذه الفاتورة حتى الآن.",
+        "fullyPaid": "هذه الفاتورة مدفوعة بالكامل!"
+      },
+      "deleteConfirm": {
+        "title": "حذف دفعة",
+        "body": "هل أنت متأكد أنك تريد حذف الدفعة البالغة ${{amount}}؟"
+      }
+    },
+
+    "title": "الفواتير",
+    "downloadBills": "تنزيل الفواتير",
+    "generateBills": "إنشاء الفواتير",
+    "downloadInProgress": "جاري التنزيل...",
+    "downloadReadyFile": "الملف جاهز للتنزيل",
+    "searchByCustomerPlaceholder": "ابحث بالعميل...",
+    "filterByStatusPlaceholder": "تصفية حسب الحالة",
+    "paymentMethodPlaceholder": "طريقة الدفع",
+    "customer": "العميل",
+    "amountLbp": "المبلغ (ل.ل)",
+    "amountUsd": "المبلغ ($)",
+    "status": "الحالة",
+    "noBillsAvailable": "لا توجد فواتير متاحة.",
+    "deleteBillTitle": "حذف الفاتورة",
+    "deleteConfirmation": "هل أنت متأكد من رغبتك في حذف هذه الفاتورة؟ لا يمكن التراجع عن هذا الإجراء.",
+    "deleteSuccess": "تم حذف الفاتورة بنجاح.",
+    "statuses": {
+      "paid": "مدفوعة",
+      "unpaid": "غير مدفوعة",
+      "partially_paid": "مدفوعة جزئياً"
+    },
+    "paymentMethods": {
+      "cash": "نقداً",
+      "whish": "ويش",
+      "omt": "OMT"
+    },
+    "downloadModal": {
+      "title": "تحميل الفواتير",
+      "initial": {
+        "description": "اختر شهر الفوترة للفواتير التي ترغب في تحميلها كملف ZIP واحد.",
+        "label": "شهر الفوترة"
+      },
+      "pending": {
+        "title": "جارٍ إنشاء الملف",
+        "body": "يتم حاليًا إنشاء ملف PDF للفواتير. قد يستغرق هذا بعض الوقت.",
+        "footer": "يمكنك إغلاق هذه النافذة بأمان. سنقوم بإعلامك عند اكتمال العملية."
+      },
+      "success": {
+        "title": "التحميل جاهز!",
+        "body": "ملف PDF للفواتير الذي طلبته جاهز للتحميل."
+      },
+      "failure": {
+        "title": "فشل إنشاء الملف",
+        "body": "فشل الطلب السابق. يرجى محاولة بدء تحميل جديد."
+      },
+      "checkingStatus": "جارٍ التحقق من الحالة...",
+      "buttons": {
+        "download": "تحميل الفواتير",
+        "downloading": "جارٍ التحميل...",
+        "startNew": "بدء تحميل جديد",
+        "downloadReady": "تحميل الملف الجاهز",
+        "tryNew": "جرّب تحميلًا جديدًا"
+      },
+
+      "messages": {
+        "noBillsForMonth": "لا توجد فواتير متاحة للشهر المحدد.",
+        "generationStarted": "بدأ إنشاء ملف PDF! ستتلقى إشعارًا عندما يكون جاهزًا.",
+        "unexpectedResponse": "استجابة غير متوقعة من الخادم.",
+        "generationError": "حدث خطأ ما أثناء بدء عملية الإنشاء.",
+        "downloadStarting": "سيبدأ التنزيل في علامة تبويب جديدة!",
+        "downloadUrlMissing": "رابط التحميل غير متوفر."
+      }
+    },
+    "generateBillsModal": {
+      "titles": {
+        "rates": "تحديد أسعار الفوترة",
+        "generate": "إنشاء فواتير الشهر",
+        "results": "نتائج الإنشاء"
+      },
+      "rates": {
+        "selectMonthLabel": "اختر شهر الفوترة",
+        "mountainKwhRate": "سعر الكيلواط لمنطقة الجبل ($)",
+        "coastalKwhRate": "سعر الكيلواط لمنطقة الساحل ($)",
+        "dollarRate": "سعر صرف الدولار إلى الليرة",
+        "fixedSubRate": "السعر الثابت لساعة القطع (ل.ل.)",
+        "fixedSubHours": "عدد ساعات القطع الشهرية"
+      },
+      "tooltips": {
+        "mountainKwhRate": "تكلفة الكيلواط ساعة للعقارات في منطقة الجبل.",
+        "coastalKwhRate": "تكلفة الكيلواط ساعة للعقارات في منطقة الساحل.",
+        "dollarRate": "سعر الصرف المستخدم لتحويل الفاتورة النهائية من الدولار الأمريكي إلى الليرة اللبنانية.",
+        "fixedSubRate": "التكلفة الثابتة لكل ساعة قطع للعدادات ذات الباقات الثابتة.",
+        "fixedSubHours": "إجمالي عدد ساعات القطع في الشهر للعدادات ذات الباقات الثابتة."
+      },
+      "results": {
+        "successTitle": "تم الإنشاء بنجاح!",
+        "missingTitle": "قراءات عدادات مفقودة",
+        "missingPrompt": "لا يمكن متابعة الإنشاء لوجود قراءات مفقودة لبعض العدادات. يمكنك <strong>الإنشاء الإجباري</strong> للفواتير للعدادات التي لديها قراءات وتخطي الباقي.",
+        "unverifiedTitle": "قراءات عدادات غير موثقة",
+        "unverifiedPrompt": "تم إيقاف الإنشاء مؤقتًا لوجود قراءات غير موثقة. يمكنك <strong>الإنشاء الإجباري</strong> للفواتير باستخدام هذه القراءات، ولكن لا ينصح بذلك.",
+        "cannotProceedTitle": "إجراء مطلوب",
+        "cannotProceedPrompt": "لا يمكن متابعة الإنشاء. يرجى الذهاب إلى صفحة القراءات لتوثيق قراءات العدادات المعلقة لهذا الشهر.",
+        "noNewBillsTitle": "اكتمل الإنشاء",
+        "noNewBillsMessage": "انتهت عملية الإنشاء، ولكن لم يتم إنشاء فواتير جديدة. قد يكون السبب أنها موجودة بالفعل."
+      },
+      "metrics": {
+        "title": "إحصائيات الإنشاء",
+        "totalActive": "إجمالي العدادات النشطة",
+        "billsCreated": "الفواتير التي تم إنشاؤها",
+        "alreadyExist": "فواتير موجودة مسبقًا",
+        "missingReadings": "عدادات بدون قراءات",
+        "unverifiedReadings": "عدادات بقراءات غير موثقة",
+        "skippedMeters": "العدادات التي تم تخطيها"
+      },
+      "forceMissing": "إنشاء إجباري (تخطي المفقودة)",
+      "forceUnverified": "إنشاء إجباري (استخدام غير الموثقة)",
+      "goToReadings": "الانتقال إلى القراءات",
+      "messages": {
+        "ratesUpdated": "تم تحديث الأسعار بنجاح.",
+        "ratesCreated": "تم إنشاء الأسعار بنجاح للشهر المحدد.",
+        "generationSuccess": "بدأت عملية إنشاء الفواتير بنجاح.",
+        "generationTimeNote": "يرجى الانتظار بضع دقائق حتى تكتمل العملية."
+      },
+      "errors": {
+        "fetchRatesError": "فشل في جلب الأسعار للشهر المحدد.",
+        "noRateIdError": "معرّف السعر مفقود. لا يمكن المتابعة.",
+        "missingReadingsApi": "يوجد قراءات مفقودة لـ <1>{{count}}</1> عدادات فعالة في شهر <3>{{month}}</3>."
+      },
+      "initialInfoText": "أنت على وشك إنشاء فواتير لجميع المشتركين لشهر {{month}}.",
+      "confirmProceed": "سيؤدي هذا إلى إنشاء فواتير جديدة غير مدفوعة. هل أنت متأكد من أنك تريد المتابعة؟",
+      "startGeneration": "بدء الإنشاء",
+      "missingTitle": "قراءات عدادات مفقودة",
+      "missingPrompt": "لا يمكن للنظام إنشاء فواتير لـ <strong>جميع</strong> المشتركين لشهر {{month}} بسبب وجود قراءات عدادات مفقودة.",
+      "unverifiedTitle": "قراءات عدادات غير مؤكدة",
+      "unverifiedPrompt": "هناك قراءات عدادات غير مؤكدة لشهر {{month}}. يوصى بشدة بتأكيد جميع القراءات قبل إنشاء الفواتير.",
+      "unverifiedNote": "إنشاء الفواتير بقراءات غير مؤكدة سيجعلها 'مؤكدة' وقد يؤدي إلى عدم دقة في الفواتير.",
+      "forceGeneration": "الإنشاء على أي حال",
+      "validation": {
+        "required": "هذا الحقل مطلوب",
+        "positive": "يجب أن يكون السعر أكبر من صفر",
+        "minZero": "لا يمكن أن يكون السعر سالبًا",
+        "atLeastOneRate": "يجب أن يكون أحد سعري الجبل أو الساحل أكبر من صفر."
+      }
+    }
+  },
+  "forgotPassword": {
+    "title": "إعادة تعيين كلمة المرور",
+    "phone": {
+      "description": "أدخل رقم هاتفك، وسنرسل رمز التحقق إلى حسابك على واتساب.",
+      "label": "رقم الهاتف",
+      "button": "إرسال الرمز"
+    },
+    "otp": {
+      "description": "أدخل الرمز المكون من 4 أرقام الذي تم إرساله إلى <1></1><2>+961 {{phoneNumber}}</2>",
+      "label": "رمز التحقق",
+      "resendTimer": "إعادة إرسال الرمز خلال {{seconds}} ثانية",
+      "resendButton": "إعادة إرسال الرمز",
+      "verifyButton": "التحقق من الرمز"
+    },
+    "password": {
+      "description": "أنشئ كلمة مرور جديدة وقوية لحسابك.",
+      "newPasswordLabel": "كلمة المرور الجديدة",
+      "confirmPasswordLabel": "تأكيد كلمة المرور الجديدة",
+      "resetButton": "إعادة تعيين كلمة المرور"
+    },
+    "success": {
+      "title": "تمت إعادة تعيين كلمة المرور!",
+      "description": "لقد تم إعادة تعيين كلمة المرور بنجاح. يمكنك الآن تسجيل الدخول باستخدام كلمة المرور الجديدة.",
+      "button": "العودة إلى تسجيل الدخول"
+    },
+    "notifications": {
+      "otpSent": "تم إرسال رمز التحقق بنجاح إلى حسابك على واتساب.",
+      "otpVerified": "تم التحقق من الرمز بنجاح.",
+      "passwordResetSuccess": "تمت إعادة تعيين كلمة المرور بنجاح!",
+      "newOtpSent": "تم إرسال رمز تحقق جديد."
+    },
+    "validations": {
+      "phoneInvalid": "يجب أن يكون رقمًا لبنانيًا صالحًا مكونًا من 8 أرقام",
+      "phoneRequired": "رقم الهاتف مطلوب",
+      "otpInvalid": "يجب أن يتكون رمز التحقق من 4 أرقام",
+      "otpRequired": "رمز التحقق مطلوب",
+      "passwordMin": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
+      "passwordPattern": "يجب أن تحتوي على حرف كبير وحرف صغير ورقم واحد على الأقل",
+      "newPasswordRequired": "كلمة المرور الجديدة مطلوبة",
+      "passwordsMustMatch": "كلمتا المرور غير متطابقتين",
+      "confirmPasswordRequired": "تأكيد كلمة المرور مطلوب"
+    }
+  },
+
+  "rates": {
+    "viewModal": {
+      "title": "عرض الأسعار حسب السنة",
+      "yearLabel": "اختر السنة",
+      "noRates": "لم يتم العثور على أسعار للسنة المحددة.",
+      "fetchError": "فشل في جلب الأسعار. يرجى المحاولة مرة أخرى.",
+      "table": {
+        "month": "الشهر",
+        "mountainRate": "سعر الكيلوواط/ساعة (جبلي)",
+        "coastalRate": "سعر الكيلوواط/ساعة (ساحلي)",
+        "dollarRate": "سعر الدولار"
+      },
+      "footerMessage": {
+        "part1": "لتغيير أسعار الشهر القادم، انتقل إلى نافذة إنشاء الفواتير في",
+        "link": "صفحة الفواتير"
+      }
+    }
+  },
+  "readings": {
+    "title": "القراءات",
+    "uncollectedTab": "لم يتم جمعها",
+    "collectedTab": "تم جمعها",
+    "collectedView": {
+      "verifyAllButton": "تحقق من الكل",
+      "searchPlaceholder": "ابحث بواسطة العميل...",
+      "statusFilterPlaceholder": "فرز حسب الحالة",
+      "areaFilterPlaceholder": "فرز حسب المنطقة",
+      "noReadings": "لا توجد قراءات متاحة."
+    },
+    "deleteModal": {
+      "title": "حذف القراءة",
+      "body": "هل أنت متأكد أنك تريد حذف القراءة الخاصة بـ <strong>{{customerName}}</strong>؟"
+    },
+    "summary": {
+      "totalActiveMeters": "إجمالي العدادات النشطة",
+      "metersWithReadings": "عدادات بقراءات",
+      "metersNeedingReadings": "عدادات تحتاج قراءة",
+      "pendingReadings": "قراءات معلقة",
+      "verifiedReadings": "قراءات موثقة"
+    },
+    "verifyModal": {
+      "title": "التحقق من قراءة {{customerName}}",
+      "loadingDetails": "جار تحميل التفاصيل...",
+      "fetchError": "فشل تحميل تفاصيل القراءة. يرجى المحاولة مرة أخرى.",
+      "successMessage": "تم التحقق من القراءة بنجاح!",
+      "scannedImageTitle": "الصورة الممسوحة ضوئياً",
+      "imageAlt": "قراءة العداد للعميل {{customerName}}",
+      "previewAlt": "معاينة",
+      "noImage": "لا توجد صورة متاحة لهذه القراءة.",
+      "verificationTitle": "التحقق من القراءة",
+      "customerLabel": "العميل:",
+      "previousReadingLabel": "القراءة السابقة (كيلوواط/ساعة)",
+      "currentReadingLabel": "القراءة الحالية (كيلوواط/ساعة)",
+      "verifyingButton": "جار التحقق...",
+      "verifyButton": "حفظ والتحقق",
+      "validation": {
+        "required": "القراءة الحالية مطلوبة",
+        "min": "يجب أن تكون القراءة أكبر من أو تساوي القراءة السابقة ({{value}})"
+      }
+    },
+    "awaitingView": {
+      "searchByCustomerNamePlaceholder": "ابحث باسم العميل...",
+      "filterByAreaPlaceholder": "تصفية حسب المنطقة",
+      "customerName": "اسم العميل",
+      "area": "المنطقة",
+      "previousReading": "القراءة السابقة",
+      "manualEntry": "إدخال يدوي",
+      "addReading": "إضافة قراءة",
+      "noMetersAwaiting": "لا توجد عدادات في انتظار القراءات."
+    },
+    "addReadingModal": {
+      "addReadingFor": "إضافة قراءة للعميل {{customerName}}",
+      "previousReadingLabel": "القراءة السابقة (كيلوواط/ساعة)",
+      "newReadingLabel": "القراءة الجديدة (كيلوواط/ساعة)",
+      "enterNewReadingPlaceholder": "أدخل القراءة الجديدة",
+      "readingPhotoRequired": "صورة القراءة (مطلوبة)",
+
+      "messages": {
+        "readingAddedSuccess": "تمت إضافة القراءة بنجاح!"
+      },
+      "yup": {
+        "readingNegative": "لا يمكن أن تكون القراءة قيمة سالبة",
+        "readingTooLow": "يجب أن تكون القراءة >= القراءة السابقة ({{value}})",
+        "newReadingRequired": "القراءة الجديدة مطلوبة",
+        "photoRequired": "صورة القراءة مطلوبة.",
+        "fileTooLarge": "حجم الملف كبير جدًا (الحد الأقصى {{size}} ميجابايت)",
+        "unsupportedFormat": "تنسيق غير مدعوم. يرجى رفع ملف بصيغة JPEG."
+      }
+    },
+    "camera": {
+      "starting": "جاري تشغيل الكاميرا...",
+      "errorPermissionDenied": "تم رفض إذن الوصول إلى الكاميرا. يرجى السماح بالوصول إلى الكاميرا في إعدادات المتصفح.",
+      "errorNoDevice": "لم يتم العثور على جهاز كاميرا. يرجى توصيل كاميرا.",
+      "errorDefault": "حدث خطأ غير متوقع في الكاميرا."
+    },
+    "verifyAll": {
+      "title": "تأكيد التحقق الجماعي",
+      "confirmationWarning": "أنت على وشك التحقق من جميع القراءات المعلقة للشهر المحدد. لا يمكن التراجع عن هذا الإجراء.",
+      "monthLabel": "شهر التحقق",
+      "verifying": "جاري التحقق من القراءات...",
+      "resultTitle": "نتيجة التحقق",
+      "verifiedCount": "تم التحقق من {{count}} قراءة.",
+      "successMessage": "تم بنجاح التحقق من {{count}} قراءة للفترة {{period}}",
+      "noPendingMessage": "لم يتم العثور على قراءات معلقة للفترة {{period}}"
+    },
+    "table": {
+      "customer": "العميل",
+      "area": "المنطقة",
+      "previous": "السابقة",
+      "current": "الحالية",
+      "status": "الحالة",
+      "actions": "الإجراءات"
+    }
+  },
+  "months": {
+    "january": "يناير",
+    "february": "فبراير",
+    "march": "مارس",
+    "april": "أبريل",
+    "may": "مايو",
+    "june": "يونيو",
+    "july": "يوليو",
+    "august": "أغسطس",
+    "september": "سبتمبر",
+    "october": "أكتوبر",
+    "november": "نوفمبر",
+    "december": "ديسمبر"
+  }
+}

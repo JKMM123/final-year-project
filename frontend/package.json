@@ -10,8 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "formik": "^2.4.9",
+    "lodash": "^4.17.23",
+    "lucide-react": "^1.7.0",
+    "radix-ui": "^1.4.3",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.2.0",
+    "react-select": "^5.10.2",
+    "yup": "^1.7.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

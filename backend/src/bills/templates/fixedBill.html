@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invoice</title>
+<style>
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+font-family: 'Open Sans';
+src:  url('./OpenSans-Bold.ttf') format('truetype');
+font-weight: 700;
+font-style: normal;
+}
+    body {
+        font-family:'Open Sans', sans-serif;
+        direction: ltr; /* Set to RTL for Arabic content */
+        background-color: white;
+        font-weight: 400;
+        width: 210mm;
+    }
+       .invoice-container {
+        width: 187mm; /* A4 width in mm */
+        max-height: 72mm;
+        border: 1px solid black; /* tde main outer border */
+        padding: 0; /* Remove padding to make table flush against tde border */
+        background-color: white;
+        margin: 7mm 11mm 5mm 11mm; /* top, right, bottom, left */
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse; /* tdis is crucial for merging borders */
+        text-align: center;
+        table-layout: fixed;
+    }
+   
+    td {
+        padding: 0px;
+        font-size: 10px;
+        vertical-align: middle;
+        overflow: hidden;     /* hide overflowing content */
+        text-overflow: ellipsis; /* optional: show "..." if clipped */
+        white-space: nowrap;  /* keep text on one line */
+    }
+    .font-xl {
+        font-size: 28px;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+
+    }
+    .main-title {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .value-box {
+        font-weight: 500;
+    }
+    .value-box-1 {
+        font-size: 9px;
+        font-weight: bold;
+    }
+    /* A cell tdat contains a nested table should have no padding */
+    .nested-table-container {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .nested-table{
+        table-layout: fixed;
+        padding: 0px;
+        margin: 0px;
+    }
+    .nested-table td, .nested-table td {
+        /* By default, cells of a nested table have no borders */
+        border: none;
+        padding: 0px;
+        margin: 0px;
+    }
+    /* Special class to add a grid to tde main data table */
+    .data-grid td {
+        border: 1px solid black;
+    }
+    .text-left {
+        text-align: left;
+    }
+    .text-right {
+        text-align: right;
+    }
+    .notes-section {
+        text-align: right;
+        vertical-align: top;
+    }
+    .titles {
+        font-weight: 500;
+        font-size: 8.5px;
+        border-top: none;
+    }
+    
+</style>
+</head>
+<body> 
+<div class="invoice-container">
+    <table class="header-table">
+        <tbody>
+            <tr style="border-top: none;">
+                <td rowspan="2" class="font-xl" style="width: 22mm; height: 16mm; border-left: none; border-top: none;border-right: 1px solid black;border-bottom: 1px solid black;" >{{ business_name }}</td>
+                <td  class="nested-table-container" style="width: 137mm;height: 4.5mm;">
+                    <table class="nested-table" style="border-top: none;border-right: 1px solid black; height: 100%;">
+                        <tr style="border-top: none;">
+                            <td class="" style="width: 15mm;border-top: none; font-size: 9px;">Date:</td>
+                            <td class="value-box" style="width: 122mm;border-top: none; font-weight: bold; font-size: 9.5px;">{{ bill_due_date }}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td rowspan="1" class="value-box" style="width: 27mm; height: 4.5mm; border-bottom: 1px solid black; border-right: none;border-top: none;font-size: 9px;">{{ meter_number }}</td>
+
+            </tr>
+            <tr style="height: 11.2mm;">
+                <td class="nested-table-container" >
+                    <table class="nested-table" style="border: none; border-top: 1px solid black; border-right: 1px solid black;">
+                        <tr>
+                            <td style="width: 32mm;height: 8mm;font-size: 8px;">Received From:</td>
+                            <td class="value-box" rowspan="2" style="vertical-align: middle; font-size: 18px; border-bottom: none;">{{ customer_name }}</td>
+                            <td style="width: 16mm; font-size: 7.5px;">:وصلنا من السيد</td>
+                        </tr>
+                        <tr style="height: 3.2mm;border-bottom: none;">
+                            <td class="value-box" style="border-top: 1px solid black; border-right: 1px solid black; width: 32mm; font-size: 8px;">{{ customer_phone_number }}</td>
+                            <td class="value-box" style="border-top: 1px solid black; border-left: 1px solid black; width: 32mm;font-size: 8px;">{{area_name}}</td>
+                        </tr>
+                    </table>
+                </td>
+                <td class="nested-table-container" style="border-right: none; height: 11mm; width: 26.5mm;">
+                    <table class="nested-table" style="border-right: none;">
+                        <tr style="height: 8mm;">
+                            <td style="font-size: 9px;">بدل اشتراك عن شهر</td>
+                        </tr>
+                        <tr style="height: 3.4mm;">
+                            <td class="value-box" style="font-size: 8px; font-weight: bold;" >{{ reading_month }}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr><td colspan="3" style="border: none;height: 4.5mm;"></td></tr>
+            <tr>
+                <td colspan="3" class="nested-table-container" style="border: none;">
+                    <table class="nested-table data-grid" style="border-right: none; border-left: none; ">
+                        
+                         <tr style="font-size: 7.5px;">
+                                <td style="width: 22mm; border-left: none;" class="titles">تصليح</td>
+                                <td style="width: 30mm;" class="titles">المجموع</td>
+                                <td style="width: 30mm;" class="titles">سعر ساعة القطع</td>
+                                <td style="width: 30mm;" class="titles">ساعات القطع</td>
+                                <td style="width: 13mm;"class="titles">امبراچ</td>
+                                <td style="width: 13mm;"class="titles">فئة</td>
+                                <td style="width: 9mm;border: none;"></td>
+                                <td style="width: 18mm;border-right: none;"class="titles">حسم ثمن العداد</td>
+                            </tr>
+                                                
+                            <tr style="border-right: none; ">
+                                <td class="value-box-1" style=" border-left: none;">{{ fixes }}</td>
+                                <td class="value-box-1">{{ total }}</td>
+                                <td class="value-box-1">{{ fixed_sub_rate }}</td>
+                                <td class="value-box-1">{{ fixed_sub_hours }}</td>
+                                <td class="value-box-1">{{ amperage }}</td>
+                                <td class="value-box-1">A</td>
+                                <td style="border: none;"></td>
+                                <td class="value-box-1 " style="border-right: none ;">0</td>
+                            </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr><td colspan="3" style="border: none;height: 4.5mm;"></td></tr>
+
+            <tr >
+                <td colspan="3" class="nested-table-container" style="border: none; height: 3.9mm;">
+                    <table class="nested-table " style="border-right: none;">
+                        <td style="width: 54.5mm; font-size: 9px; font-weight: bold;">Jamil Abou Antoun 03184468</td>
+                        <td style="width: 24.3mm;border-right: 1px solid black;"></td>
+                        <td style="width: 13mm;border-right: 1px solid black;border-top: 1px solid black; font-size: 9px; font-weight: bold;">LBP</td>
+                        <td style="width: 31mm;border-right: 1px solid black;border-top: 1px solid black; font-weight: bold;">{{lbp_value}}</td>
+                        <td style="width: 20mm;border-right: 1px solid black; border-top: 1px solid black; font-size: 9px; font-weight: bold;">LBP</td>
+                        <td style="width: 44mm;"></td>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="nested-table-container" style="border: none; height: 3.9mm;">
+                    <table class="nested-table " style="border-right: none; height: 100%;">
+                        <td style="width: 79mm;border-right: 1px solid black;"></td>
+                        <td  style="width: 13.3mm;border-right: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black;"></td>
+                        <td  style="width: 25mm; border-top: 1px solid black; border-bottom: 1px solid black; font-weight: bold;" >{{ dollar_rate }}</td>
+                        <td style="width: 59mm;font-size: 7.5px; font-weight: 600; border-right: 1px solid black; border-top: 1px solid black; border-bottom: 1px solid black;">المعدل الوسطي الشهري لسعر الدولار حسب وزارة الطاقة</td>
+                        <td style="width: 13mm; border-left: none;"></td>
+                        </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="nested-table-container" style="border: none; height: 3.9mm;">
+                    <table class="nested-table " style="border-right: none; height: 100%;">
+                        <td style="width: 53.9mm; border-top: 1px solid black;font-size: 8.5px;font-weight: bold;">متأخرات او تصليح عن الأشهر السابقة</td>
+                        <td style="width: 24.37mm;border-left: 1px solid black; border-right: 1px solid black;"></td>
+                        <td style="width: 13mm; border-right: 1px solid black; font-weight: bold;">$</td>
+                        <td style="width: 31mm;border-right: 1px solid black;  font-weight: bold;">{{usd_value}}</td>
+                        <td style="width: 20mm;border-right: 1px solid black; font-weight: bold;">$</td>
+                        <td style="width: 44mm; border-right: none; "></td>
+                    </table>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td colspan="3" class="nested-table-container" style="border: none; height: 16mm;">
+                    <table class="nested-table " style="border-right: none;border-top: 1px solid black; height: 100%;">
+                        <tr>
+                            <td style="width: 20mm;font-weight: bold;">USD</td>
+                            <td style="width: 34.3mm; font-weight: bold;">{{unpaid_arrears_usd}}</td>
+                            <td style="width: 111.5mm; white-space: normal; font-weight: bold; border-left: 1px solid black;">إن أي تلاعب في العدادات أو القواطع يؤدي إلى قطع الإشتراك دون سابق إنذار
+                                <br>
+                                 إن جميع الأعطال من علبة الاشتراك إلى منزل المشترك هي على عاتقه الخاص
+                                 <br>
+                                  يرجى من زبائننا الكرام تسديد الفواتير قبل العاشر من كل الشهر لخدمتكم بشكل افضل</td>
+                            <td style="width: 22mm; vertical-align: top; font-weight: bold;"> : ملاحظة </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

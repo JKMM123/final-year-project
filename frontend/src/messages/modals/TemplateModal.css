@@ -1,0 +1,79 @@
+/* TemplateModal.css */
+
+.message-editor {
+  position: relative;
+}
+
+.message-highlighter {
+  position: absolute;
+  top: 10px;
+  left: 13px;
+  width: 100%;
+  min-height: 100%;
+  padding: var(--bs-form-control-padding-y) var(--bs-form-control-padding-x); /* Match textarea padding */
+  border: var(--bs-border-width) solid transparent; /* Match textarea border */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  /* THIS IS THE FIX: Make the regular text visible in the highlighter layer */
+  color: inherit; /* Was 'transparent' */
+  pointer-events: none; /* Let clicks go through to textarea */
+    padding: var(--bs-form-control-padding-y) var(--bs-form-control-padding-x);
+  border: var(--bs-border-width) solid transparent; /* Keeps alignment perfect */
+}
+
+.message-highlighter strong {
+  color: #000; /* Text color inside the highlight */
+  background-color: #0d6efd; /* The yellow highlight */
+  font-weight: normal; /* Keep font consistent to prevent text shifting */
+  border-radius: 5px; /* Optional: adds a nice rounded corner */
+  padding: 2px 6px;     /* Optional: adds a little breathing room */
+}
+
+.message-editor textarea {
+  position: relative;
+  background: transparent;
+  /* Hide the textarea's own text */
+  color: transparent;
+  /* Make the typing cursor visible */
+  caret-color: black;
+  z-index: 1;
+  resize: none;
+}
+
+.placeholder-badge:hover {
+  background-color: #0b5ed7;
+  transform: scale(1.03);
+  transition: all 0.1s ease-in-out;
+}
+
+
+.placeholder-container {
+  display: block;             /* Make sure it's not collapsing */
+  max-height: 200px;          /* or 250px if you prefer */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 4px;
+  border: 1px solid #dee2e6;  /* Optional: subtle border to separate section */
+  border-radius: 6px;
+  background: #f8f9fa;        /* Optional: makes it visually distinct */
+}
+
+
+.placeholder-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.placeholder-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+
+.message-textarea {
+  position: relative;
+  background: transparent;
+  color: transparent;
+  caret-color: black;
+  z-index: 1;
+  resize: none; /* handled automatically by react-textarea-autosize */
+}

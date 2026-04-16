@@ -7,6 +7,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import { AlertProvider } from "./context/AlertContext";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 // Import Bootstrap and custom styles
 import "./index.css";
@@ -17,9 +18,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <AlertProvider>
-        <AuthProvider>
-          <App />
-        </AuthProvider>
+        <TooltipProvider>
+          <AuthProvider>
+            <App />
+          </AuthProvider>
+        </TooltipProvider>
       </AlertProvider>
     </BrowserRouter>
   </React.StrictMode>,

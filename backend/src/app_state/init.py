@@ -54,6 +54,7 @@ from db.postgres.migration import apply_migrations_with_retry
 
 from src.payments.services.paymentsService import PaymentsService
 
+
 class AppInitializer:
     _status = {
         "httpx_client_manager": False,
@@ -63,7 +64,7 @@ class AppInitializer:
         "users_queries": False,
         "users_service": False,
         "seed_system_user": False,
-        "seed_rates":False,
+        "seed_rates": False,
         "rates_queries": False,
         "rates_service": False,
         "packages_queries": False,
@@ -86,8 +87,7 @@ class AppInitializer:
         "messages_service": False,
         "whatsapp_messages_service": False,
         "migration": False,
-        "payments_service": False
-
+        "payments_service": False,
     }
 
     @classmethod
@@ -95,7 +95,7 @@ class AppInitializer:
         try:
             # Initialize HTTPX Client Manager
             logger.info("Initializing HTTPX client manager...")
-            success = await HttpxClientManager.initialize() 
+            success = await HttpxClientManager.initialize()
             if success:
                 cls._status["httpx_client_manager"] = True
                 logger.info("HTTPX client manager initialized successfully")
@@ -120,7 +120,7 @@ class AppInitializer:
             if success:
                 cls._status["postgres"] = True
                 logger.info("PostgreSQL connection established")
-                
+
                 # # Create database entities
                 # db_initialized = await create_all_entities(PostgresClient)
                 # if not db_initialized:
@@ -128,7 +128,7 @@ class AppInitializer:
             else:
                 logger.error("Failed to initialize PostgreSQL client")
                 return False
-            
+
             # Initialize Redis
             logger.info("Initializing Redis connection...")
             try:
@@ -137,7 +137,7 @@ class AppInitializer:
             except Exception as e:
                 logger.error(f"Error initializing Redis connection: {e}")
                 return False
-            
+
             # Initialize GCS Manager
             logger.info("Initializing GCS Manager...")
             try:
@@ -146,11 +146,11 @@ class AppInitializer:
             except Exception as e:
                 logger.error(f"Error initializing GCS Manager: {str(e)}")
                 return False
-            
+
             # Create GCS bucket
             logger.info("Creating GCS bucket...")
             try:
-                bucket_name = "electricity-billing-system-bucket-automation-f46ca"
+                bucket_name = "electricity-billing-system-bucket-automation-fyp125"
                 location = "europe-west1"
                 bucket = gcs_manager.create_bucket(bucket_name, location)
                 cls._status["bucket_created"] = True
@@ -163,11 +163,11 @@ class AppInitializer:
             try:
                 auth_queries = AuthQueries()
                 cls._status["auth_queries"] = True
-            
+
             except Exception as e:
                 logger.error(f"Error initializing Auth Queries: {str(e)}")
                 return False
-            
+
             try:
                 await seed_system_user_in_pg()
                 cls._status["seed_system_user"] = True
@@ -178,9 +178,7 @@ class AppInitializer:
             # Initialize Auth Service
             logger.info("Initializing Auth Service...")
             try:
-                auth_service = AuthService(
-                    auth_queries=auth_queries
-                    )
+                auth_service = AuthService(auth_queries=auth_queries)
                 cls._status["auth_service"] = True
                 app.state.auth_service = auth_service
             except Exception as e:
@@ -200,17 +198,14 @@ class AppInitializer:
             # Initialize Users Service
             logger.info("Initializing Users Service...")
             try:
-                users_service = UsersService(
-                    users_queries=users_queries
-                )
+                users_service = UsersService(users_queries=users_queries)
                 cls._status["users_service"] = True
                 app.state.users_service = users_service
 
             except Exception as e:
                 logger.error(f"Error initializing Users Service: {str(e)}")
                 return False
-            
-            
+
             # Initialize Rates Queries
             logger.info("Initializing Rates Queries...")
             try:
@@ -221,20 +216,18 @@ class AppInitializer:
             except Exception as e:
                 logger.error(f"Error initializing Rates Queries: {str(e)}")
                 return False
-            
+
             # Initialize Rates Service
             logger.info("Initializing Rates Service...")
             try:
-                rates_service = RatesService(
-                    rates_queries=rates_queries
-                )
+                rates_service = RatesService(rates_queries=rates_queries)
                 cls._status["rates_service"] = True
                 app.state.rates_service = rates_service
-            
+
             except Exception as e:
                 logger.error(f"Error initializing Rates Service: {str(e)}")
                 return False
-            
+
             # Initialize Packages Queries
             logger.info("Initializing Packages Queries...")
             try:
@@ -249,16 +242,14 @@ class AppInitializer:
             # Initialize Packages Service
             logger.info("Initializing Packages Service...")
             try:
-                packages_service = PackagesService(
-                    packages_queries=packages_queries
-                )
+                packages_service = PackagesService(packages_queries=packages_queries)
                 cls._status["packages_service"] = True
                 app.state.packages_service = packages_service
 
             except Exception as e:
                 logger.error(f"Error initializing Packages Service: {str(e)}")
                 return False
-            
+
             # Initialize Areas Queries
             logger.info("Initializing Areas Queries...")
             try:
@@ -269,13 +260,11 @@ class AppInitializer:
             except Exception as e:
                 logger.error(f"Error initializing Areas Queries: {str(e)}")
                 return False
-            
+
             # Initialize Areas Service
             logger.info("Initializing Areas Service...")
             try:
-                areas_service = AreasService(
-                    areas_queries=areas_queries
-                )
+                areas_service = AreasService(areas_queries=areas_queries)
                 cls._status["areas_service"] = True
                 app.state.areas_service = areas_service
 
@@ -286,9 +275,7 @@ class AppInitializer:
             # Initialize Meters Queries
             logger.info("Initializing Meters Queries...")
             try:
-                meters_queries = MetersQueries(
-                    gcs_manager=gcs_manager
-                )
+                meters_queries = MetersQueries(gcs_manager=gcs_manager)
                 cls._status["meters_queries"] = True
                 app.state.meters_queries = meters_queries
 
@@ -299,35 +286,28 @@ class AppInitializer:
             # Initialize Meters Service
             logger.info("Initializing Meters Service...")
             try:
-                meters_service = MetersService(
-                    meters_queries=meters_queries
-                )
+                meters_service = MetersService(meters_queries=meters_queries)
                 cls._status["meters_service"] = True
                 app.state.meters_service = meters_service
 
             except Exception as e:
                 logger.error(f"Error initializing Meters Service: {str(e)}")
                 return False
-            
+
             # Initialize Meter File Service
             logger.info("Initializing Meter File Service...")
             try:
-                meter_file_service = MeterFileService(
-                    meters_queries=meters_queries
-                )
+                meter_file_service = MeterFileService(meters_queries=meters_queries)
                 cls._status["meter_file_service"] = True
                 app.state.meter_file_service = meter_file_service
             except Exception as e:
                 logger.error(f"Error initializing Meter File Service: {str(e)}")
                 return False
-            
-            
+
             # Initialize Readings Queries
             logger.info("Initializing Readings Queries...")
             try:
-                readings_queries = ReadingsQueries(
-                    gcs_manager=gcs_manager
-                )
+                readings_queries = ReadingsQueries(gcs_manager=gcs_manager)
                 cls._status["readings_queries"] = True
                 app.state.readings_queries = readings_queries
 
@@ -338,22 +318,18 @@ class AppInitializer:
             # Initialize Readings Service
             logger.info("Initializing Readings Service...")
             try:
-                readings_service = ReadingsService(
-                    readings_queries=readings_queries
-                )
+                readings_service = ReadingsService(readings_queries=readings_queries)
                 cls._status["readings_service"] = True
                 app.state.readings_service = readings_service
 
             except Exception as e:
                 logger.error(f"Error initializing Readings Service: {str(e)}")
                 return False
-            
+
             # Initialize Scanning Service
             logger.info("Initializing Scanning Service...")
             try:
-                scanning_service = ScanningService(
-                    readings_queries=readings_queries
-                )
+                scanning_service = ScanningService(readings_queries=readings_queries)
                 cls._status["scanning_service"] = True
                 app.state.scanning_service = scanning_service
 
@@ -375,9 +351,7 @@ class AppInitializer:
             # Initialize Bills Service
             logger.info("Initializing Bills Service...")
             try:
-                bills_service = BillsService(
-                    bills_queries=bills_queries
-                )
+                bills_service = BillsService(bills_queries=bills_queries)
                 cls._status["bills_service"] = True
                 app.state.bills_service = bills_service
 
@@ -399,9 +373,7 @@ class AppInitializer:
             # Initialize Fixes Service
             logger.info("Initializing Fixes Service...")
             try:
-                fixes_service = FixesService(
-                    fixes_queries=fixes_queries
-                )
+                fixes_service = FixesService(fixes_queries=fixes_queries)
                 cls._status["fixes_service"] = True
                 app.state.fixes_service = fixes_service
 
@@ -476,7 +448,7 @@ class AppInitializer:
             except Exception as e:
                 logger.error(f"Error initializing WhatsApp Messages Service: {str(e)}")
                 return False
-            
+
             # Initialize Payments Service
             logger.info("Initializing Payments Service...")
             try:
@@ -490,12 +462,11 @@ class AppInitializer:
 
             logger.info("All services initialized successfully!")
             return True
-        
+
         except Exception as e:
             logger.error(f"Critical error during initialization: {e}")
             await cls.cleanup()
             return False
-
 
     @classmethod
     async def cleanup(cls):
@@ -515,19 +486,13 @@ class AppInitializer:
         except Exception as e:
             logger.error(f"Error during cleanup: {str(e)}")
 
-
     @classmethod
     def get_status(cls) -> dict:
         """Get initialization status of all services."""
         return cls._status.copy()
 
-
     @classmethod
     def is_healthy(cls) -> bool:
         """Check if all critical services are initialized."""
-        critical_services = [
-            "postgres",
-            "redis_manager",
-            "httpx_client_manager"
-        ]
+        critical_services = ["postgres", "redis_manager", "httpx_client_manager"]
         return all(cls._status.get(service, False) for service in critical_services)

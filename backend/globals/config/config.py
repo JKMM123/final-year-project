@@ -80,7 +80,7 @@ PROJECT_ID = GCS_SERVICE_ACCOUNT.get("project_id")
 if not PROJECT_ID:
     raise RuntimeError("GCS project ID not found in service account")
 
-BUCKET_NAME = f"electricity-billing-system-bucket-{PROJECT_ID}"
+BUCKET_NAME = f"my-fyp-billingbucket"
 print(f"GCS bucket name: {BUCKET_NAME}")
 
 

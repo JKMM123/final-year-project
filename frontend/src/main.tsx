@@ -12,7 +12,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 // Import Bootstrap and custom styles
 import "./index.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
-// import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

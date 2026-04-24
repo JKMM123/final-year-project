@@ -5,7 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
+  // SidebarFooter,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -15,12 +15,12 @@ import {
   SidebarGroupContent,
   SidebarGroupLabel,
 } from "../ui/sidebar";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuTrigger,
+// } from "../ui/dropdown-menu";
 import {
   Home,
   Users,
@@ -31,8 +31,8 @@ import {
   Banknote,
   Wrench,
   MapPin,
-  Globe,
-  ChevronUp,
+  // Globe,
+  // ChevronUp,
 } from "lucide-react";
 
 // Define menu items
@@ -104,10 +104,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     (link) => role && link.roles.includes(role),
   );
 
-  const handleLanguageChange = (lang: string) => {
-    i18n.changeLanguage(lang);
-    // The Layout component handles the 'dir' attribute update
-  };
+  // const handleLanguageChange = (lang: string) => {
+  //   i18n.changeLanguage(lang);
+  //   // The Layout component handles the 'dir' attribute update
+  // };
 
   return (
     <Sidebar collapsible="icon" side={isRtl ? "right" : "left"} {...props}>
@@ -147,7 +147,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter>
+      {/* <SidebarFooter>
         <SidebarMenu>
           <SidebarMenuItem>
             <DropdownMenu>
@@ -184,7 +184,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </DropdownMenu>
           </SidebarMenuItem>
         </SidebarMenu>
-      </SidebarFooter>
+      </SidebarFooter> */}
       <SidebarRail />
     </Sidebar>
   );

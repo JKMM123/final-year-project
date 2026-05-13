@@ -26,7 +26,7 @@ export const MeterToolsModal = ({
   onUploadSuccess,
 }: MeterToolsModalProps) => {
   const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState<ActiveTab>("download");
+  const [activeTab, setActiveTab] = useState<ActiveTab>("upload");
 
   // State for Download tab
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
@@ -61,7 +61,7 @@ export const MeterToolsModal = ({
     try {
       const response = await uploadMetersFile(selectedFile);
       setUploadSuccess(
-        response.message || t("meters.toolsModal.uploadTab.successMessage")
+        response.message || t("meters.toolsModal.uploadTab.successMessage"),
       );
       setSelectedFile(null);
       setDidUploadSucceed(true);
@@ -104,11 +104,11 @@ export const MeterToolsModal = ({
         onSelect={(k) => setActiveTab(k as ActiveTab)}
         className="px-3 pt-3"
       >
-        <Nav.Item>
+        {/* <Nav.Item>
           <Nav.Link eventKey="download">
             {t("meters.toolsModal.downloadTab.title")}
           </Nav.Link>
-        </Nav.Item>
+        </Nav.Item> */}
         <Nav.Item>
           <Nav.Link eventKey="upload">
             {t("meters.toolsModal.uploadTab.title")}
@@ -116,71 +116,9 @@ export const MeterToolsModal = ({
         </Nav.Item>
       </Nav>
       <Modal.Body>
-        {activeTab === "download" && (
-          <div>
-            <h5>{t("meters.toolsModal.downloadTab.heading")}</h5>
-            <p className="text-muted">
-              {t("meters.toolsModal.downloadTab.description")}
-            </p>
-
-            {fetchError && <Alert variant="danger">{fetchError}</Alert>}
-            {uploadSuccess && <Alert variant="success">{uploadSuccess}</Alert>}
-
-            <div className="d-grid mb-3">
-              <Button
-                variant="outline-primary"
-                onClick={async () => {
-                  setIsFetchingUrl(true);
-                  setFetchError(null);
-                  setDownloadUrl(null);
-                  try {
-                    const url = await getAllQrCodesZipUrl();
-                    setDownloadUrl(url);
-                  } catch (err) {
-                    setFetchError(
-                      t("meters.toolsModal.downloadTab.fetchError")
-                    );
-                  } finally {
-                    setIsFetchingUrl(false);
-                  }
-                }}
-                disabled={isFetchingUrl}
-              >
-                {isFetchingUrl ? (
-                  <>
-                    <Spinner
-                      as="span"
-                      animation="border"
-                      size="sm"
-                      role="status"
-                    />{" "}
-                    {t("meters.toolsModal.downloadTab.requestingBtn")}
-                  </>
-                ) : (
-                  t("meters.toolsModal.downloadTab.requestBtn")
-                )}
-              </Button>
-            </div>
-
-            <div className="d-grid">
-              <a
-                href={downloadUrl || "#"}
-                download={downloadUrl ? "meter_qr_codes.zip" : undefined}
-                className={`btn btn-primary ${!downloadUrl ? "disabled" : ""}`}
-                style={{
-                  pointerEvents: !downloadUrl ? "none" : "auto",
-                }}
-              >
-                <i className="bi bi-file-earmark-zip-fill me-2"></i>
-                {t("meters.toolsModal.downloadTab.downloadBtn")}
-              </a>
-            </div>
-          </div>
-        )}
-
         {activeTab === "upload" && (
           <div>
-            <h5>{t("meters.toolsModal.uploadTab.heading")}</h5>
+            {/* <h5>{t("meters.toolsModal.uploadTab.heading")}</h5> */}
             <div className="mb-3 p-3 bg-light border rounded">
               <h6 className="mb-2">
                 📋 {t("meters.toolsModal.uploadTab.requirements.title")}
@@ -189,85 +127,85 @@ export const MeterToolsModal = ({
                 <li>
                   <strong>
                     {t(
-                      "meters.toolsModal.uploadTab.requirements.fields.fullName.label"
+                      "meters.toolsModal.uploadTab.requirements.fields.fullName.label",
                     )}
                   </strong>
                   :{" "}
                   {t(
                     "meters.toolsModal.uploadTab.requirements.fields.fullName.description",
-                    { example: "Fadi Hadid" }
+                    { example: "Fadi Hadid" },
                   )}
                 </li>
                 <li>
                   <strong>
                     {t(
-                      "meters.toolsModal.uploadTab.requirements.fields.phoneNumber.label"
+                      "meters.toolsModal.uploadTab.requirements.fields.phoneNumber.label",
                     )}
                   </strong>
                   :{" "}
                   {t(
                     "meters.toolsModal.uploadTab.requirements.fields.phoneNumber.description",
-                    { example: "70186126" }
+                    { example: "70186126" },
                   )}
                 </li>
                 <li>
                   <strong>
                     {t(
-                      "meters.toolsModal.uploadTab.requirements.fields.address.label"
+                      "meters.toolsModal.uploadTab.requirements.fields.address.label",
                     )}
                   </strong>
                   :{" "}
                   {t(
                     "meters.toolsModal.uploadTab.requirements.fields.address.description",
-                    { example: "street 2 building 3" }
+                    { example: "street 2 building 3" },
                   )}
                 </li>
                 <li>
                   <strong>
                     {t(
-                      "meters.toolsModal.uploadTab.requirements.fields.amperage.label"
+                      "meters.toolsModal.uploadTab.requirements.fields.amperage.label",
                     )}
                   </strong>
                   :{" "}
                   {t(
                     "meters.toolsModal.uploadTab.requirements.fields.amperage.description",
-                    { example1: 5, example2: 10 }
+                    { example1: 5, example2: 10 },
                   )}
                 </li>
                 <li>
                   <strong>
                     {t(
-                      "meters.toolsModal.uploadTab.requirements.fields.area.label"
+                      "meters.toolsModal.uploadTab.requirements.fields.area.label",
                     )}
                   </strong>
                   :{" "}
                   {t(
                     "meters.toolsModal.uploadTab.requirements.fields.area.description",
-                    { example1: "broumana", example2: "zaraoun" }
+                    { example1: "broumana", example2: "zaraoun" },
                   )}
                 </li>
                 <li>
                   <strong>
                     {t(
-                      "meters.toolsModal.uploadTab.requirements.fields.packageType.label"
+                      "meters.toolsModal.uploadTab.requirements.fields.packageType.label",
                     )}
                   </strong>
                   :{" "}
                   {t(
                     "meters.toolsModal.uploadTab.requirements.fields.packageType.description",
-                    { example1: "fixed", example2: "usage" }
+                    { example1: "fixed", example2: "usage" },
                   )}
                 </li>
                 <li>
                   <strong>
                     {t(
-                      "meters.toolsModal.uploadTab.requirements.fields.initialReading.label"
+                      "meters.toolsModal.uploadTab.requirements.fields.initialReading.label",
                     )}
                   </strong>
                   :{" "}
                   {t(
                     "meters.toolsModal.uploadTab.requirements.fields.initialReading.description",
-                    { example1: 7, example2: 123 }
+                    { example1: 7, example2: 123 },
                   )}
                 </li>
               </ul>
@@ -275,7 +213,7 @@ export const MeterToolsModal = ({
                 ✅{" "}
                 <strong>
                   {t(
-                    "meters.toolsModal.uploadTab.requirements.acceptedFormats"
+                    "meters.toolsModal.uploadTab.requirements.acceptedFormats",
                   )}
                 </strong>{" "}
                 <code>.csv</code>, <code>.xlsx(excel)</code>
@@ -340,6 +278,67 @@ export const MeterToolsModal = ({
             </div>
           </div>
         )}
+        {/* {activeTab === "download" && (
+          <div>
+            <h5>{t("meters.toolsModal.downloadTab.heading")}</h5>
+            <p className="text-muted">
+              {t("meters.toolsModal.downloadTab.description")}
+            </p>
+
+            {fetchError && <Alert variant="danger">{fetchError}</Alert>}
+            {uploadSuccess && <Alert variant="success">{uploadSuccess}</Alert>}
+
+            <div className="d-grid mb-3">
+              <Button
+                variant="outline-primary"
+                onClick={async () => {
+                  setIsFetchingUrl(true);
+                  setFetchError(null);
+                  setDownloadUrl(null);
+                  try {
+                    const url = await getAllQrCodesZipUrl();
+                    setDownloadUrl(url);
+                  } catch (err) {
+                    setFetchError(
+                      t("meters.toolsModal.downloadTab.fetchError"),
+                    );
+                  } finally {
+                    setIsFetchingUrl(false);
+                  }
+                }}
+                disabled={isFetchingUrl}
+              >
+                {isFetchingUrl ? (
+                  <>
+                    <Spinner
+                      as="span"
+                      animation="border"
+                      size="sm"
+                      role="status"
+                    />{" "}
+                    {t("meters.toolsModal.downloadTab.requestingBtn")}
+                  </>
+                ) : (
+                  t("meters.toolsModal.downloadTab.requestBtn")
+                )}
+              </Button>
+            </div>
+
+            <div className="d-grid">
+              <a
+                href={downloadUrl || "#"}
+                download={downloadUrl ? "meter_qr_codes.zip" : undefined}
+                className={`btn btn-primary ${!downloadUrl ? "disabled" : ""}`}
+                style={{
+                  pointerEvents: !downloadUrl ? "none" : "auto",
+                }}
+              >
+                <i className="bi bi-file-earmark-zip-fill me-2"></i>
+                {t("meters.toolsModal.downloadTab.downloadBtn")}
+              </a>
+            </div>
+          </div>
+        )} */}
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>

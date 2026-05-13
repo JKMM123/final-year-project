@@ -2,7 +2,7 @@ import axios from 'axios';
 import type {AxiosInstance, AxiosError, InternalAxiosRequestConfig} from "axios";
 import * as authService from '../features/auth/loginService'; // Make sure this path is correct
 
-export const BASE_URL = "http://localhost:8080/billing-system/api/v1" ;
+export const BASE_URL = "http://localhost:8000/billing-system/api/v1" ;
 //"https://api-billing-system.skylinelb.com/billing-system/api/v1";
 //"http://192.168.1.6:8080/billing-system/api/v1" ;
 

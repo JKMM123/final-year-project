@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import "./i18n/i18n"; // Import i18n configuration
 
@@ -15,15 +14,13 @@ import "./index.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <AlertProvider>
-        <TooltipProvider>
-          <AuthProvider>
-            <App />
-          </AuthProvider>
-        </TooltipProvider>
-      </AlertProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <AlertProvider>
+      <TooltipProvider>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </TooltipProvider>
+    </AlertProvider>
+  </BrowserRouter>,
 );

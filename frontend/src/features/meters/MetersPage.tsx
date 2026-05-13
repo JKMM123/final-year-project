@@ -27,12 +27,12 @@ const QrCodeModal = lazy(() => import("./modals/QrCodeModal"));
 const MeterToolsModal = lazy(() =>
   import("./modals/MeterToolsModal").then((module) => ({
     default: module.MeterToolsModal,
-  })),
+  }))
 );
 const StatementModal = lazy(() =>
   import("./modals/StatementModal").then((module) => ({
     default: module.StatementModal,
-  })),
+  }))
 );
 
 const MetersPage = () => {
@@ -58,7 +58,7 @@ const MetersPage = () => {
   const [selectedMeter, setSelectedMeter] = useState<Meter | null>(null); // null for Add, Meter object for Edit
   const [meterToDelete, setMeterToDelete] = useState<Meter | null>(null);
   const [meterForStatement, setMeterForStatement] = useState<Meter | null>(
-    null,
+    null
   );
   const [meterForQr, setMeterForQr] = useState<Meter | null>(null);
   const [showToolsModal, setShowToolsModal] = useState(false);
@@ -70,7 +70,7 @@ const MetersPage = () => {
       { value: "active", label: t("meters.status.active") },
       { value: "inactive", label: t("meters.status.inactive") },
     ],
-    [t],
+    [t]
   );
 
   const packageTypeOptions = useMemo(
@@ -78,21 +78,21 @@ const MetersPage = () => {
       { value: "fixed", label: t("meters.packageType.fixed") },
       { value: "usage", label: t("meters.packageType.usage") },
     ],
-    [t],
+    [t]
   );
 
   const selectedPackageType = useMemo(
     () =>
       packageTypeOptions.find(
-        (option) => option.value === (filters.package_type || ""),
+        (option) => option.value === (filters.package_type || "")
       ),
-    [filters.package_type, packageTypeOptions],
+    [filters.package_type, packageTypeOptions]
   );
 
   const selectedStatus = useMemo(
     () =>
       statusOptions.find((option) => option.value === (filters.status || "")),
-    [filters.status, statusOptions],
+    [filters.status, statusOptions]
   );
 
   // ... (useMemo hooks for selected options, data fetching logic remains the same) ...
@@ -114,7 +114,7 @@ const MetersPage = () => {
         setIsLoading(false);
       }
     },
-    [handleError],
+    [handleError]
   );
 
   useEffect(() => {
@@ -141,9 +141,9 @@ const MetersPage = () => {
     () =>
       debounce(
         (query: string) => setFilters((prev) => ({ ...prev, query })),
-        500,
+        500
       ),
-    [],
+    []
   );
 
   const handleFilterChange = (key: keyof typeof filters, value: any) => {
@@ -174,7 +174,7 @@ const MetersPage = () => {
       success(
         t("meters.notifications.deleteSuccess", {
           customerName: meterToDelete.customer_full_name,
-        }),
+        })
       );
       setMeterToDelete(null);
       fetchMeters(currentPage, filters);
@@ -270,7 +270,7 @@ const MetersPage = () => {
                     onChange={(options) =>
                       handleFilterChange(
                         "package_ids",
-                        options.map((o) => o.value),
+                        options.map((o) => o.value)
                       )
                     }
                   />
@@ -284,7 +284,7 @@ const MetersPage = () => {
                     onChange={(selectedOption) =>
                       handleFilterChange(
                         "package_type",
-                        selectedOption?.value || "",
+                        selectedOption?.value || ""
                       )
                     }
                   />
@@ -377,9 +377,9 @@ const MetersPage = () => {
                             >
                               {t("meters.actions.viewStatement")}
                             </Dropdown.Item>
-                            {/* <Dropdown.Item onClick={() => setMeterForQr(meter)}>
+                            <Dropdown.Item onClick={() => setMeterForQr(meter)}>
                               {t("meters.actions.getQrCode")}
-                            </Dropdown.Item> */}
+                            </Dropdown.Item>
                           </Dropdown.Menu>
                         </Dropdown>
                       </td>

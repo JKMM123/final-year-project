@@ -29,9 +29,7 @@ import tempfile as _tempfile
 
 
 class PDFService:
-    def __init__(self):
-        self.gcs_manager = GCSManager()
-
+    gcs_manager = GCSManager()
     timezone = ZoneInfo("Asia/Beirut")
     imgkit_config = None
     pdfkit_config = None

@@ -546,7 +546,7 @@
     "deleteSuccess": "Template \"{{name}}\" deleted successfully.",
 
     "managePhoneNumber": {
-      "backButton": "Back to Templates",
+      "backButton": "Back",
       "errors": {
         "alreadyRegistered": "This phone number is already registered. Scan the QR code below to connect.",
         "statusFetchFailed": "Could not retrieve session status. Please try again later."

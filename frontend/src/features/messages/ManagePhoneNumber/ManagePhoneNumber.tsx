@@ -31,7 +31,7 @@ import type { WebhookEventData } from "./types";
 const ConfirmationModal = lazy(() =>
   import("../../../components/common/ConfirmationModal").then((module) => ({
     default: module.ConfirmationModal,
-  }))
+  })),
 );
 
 // State machine views for the component
@@ -65,18 +65,18 @@ export const ManagePhoneNumber = () => {
     () =>
       Yup.object({
         name: Yup.string().required(
-          t("messages.managePhoneNumber.form.validations.nameRequired")
+          t("messages.managePhoneNumber.form.validations.nameRequired"),
         ),
         phone_number: Yup.string()
           .matches(
             lebanesePhoneNumberRegex,
-            t("messages.managePhoneNumber.form.validations.phoneInvalid")
+            t("messages.managePhoneNumber.form.validations.phoneInvalid"),
           )
           .required(
-            t("messages.managePhoneNumber.form.validations.phoneRequired")
+            t("messages.managePhoneNumber.form.validations.phoneRequired"),
           ),
       }),
-    [t]
+    [t],
   );
 
   const startWebhookListener = useCallback(() => {
@@ -135,7 +135,7 @@ export const ManagePhoneNumber = () => {
         setView("SHOW_FORM");
       }
     },
-    [handleError, startWebhookListener]
+    [handleError, startWebhookListener],
   );
 
   const handleCreateSession = useCallback(
@@ -148,7 +148,7 @@ export const ManagePhoneNumber = () => {
             error.response?.data?.message?.includes("already has a session")
           ) {
             setPersistentError(
-              t("messages.managePhoneNumber.errors.alreadyRegistered")
+              t("messages.managePhoneNumber.errors.alreadyRegistered"),
             );
             return connectSession();
           }
@@ -156,7 +156,7 @@ export const ManagePhoneNumber = () => {
         }
       });
     },
-    [handleGenerateQr, t]
+    [handleGenerateQr, t],
   );
 
   const handleRefreshQr = useCallback(async () => {
@@ -183,7 +183,7 @@ export const ManagePhoneNumber = () => {
         } else {
           handleError(error);
           setPersistentError(
-            t("messages.managePhoneNumber.errors.statusFetchFailed")
+            t("messages.managePhoneNumber.errors.statusFetchFailed"),
           );
         }
       }
@@ -260,7 +260,7 @@ export const ManagePhoneNumber = () => {
                       type="tel"
                       className="form-control"
                       placeholder={t(
-                        "messages.managePhoneNumber.form.phonePlaceholder"
+                        "messages.managePhoneNumber.form.phonePlaceholder",
                       )}
                     />
                     <ErrorMessage
@@ -374,10 +374,10 @@ export const ManagePhoneNumber = () => {
     <Container className="mt-2 ">
       <Row className="mb-2">
         <Col xs="auto">
-          <Button variant="outline" onClick={() => navigate("/messages")}>
+          <Button variant="outline" className="d-flex align-items-center" onClick={() => navigate("/messages")}>
             {isRTL ? (
               <>
-                <BsArrowRight className="ms-2" />
+                <BsArrowRight className="me-2" />
                 {t("messages.managePhoneNumber.backButton")}
               </>
             ) : (
@@ -404,10 +404,10 @@ export const ManagePhoneNumber = () => {
         onHide={() => setShowDisconnectModal(false)}
         isConfirming={isDisconnecting}
         confirmText={t(
-          "messages.managePhoneNumber.disconnectModal.confirmText"
+          "messages.managePhoneNumber.disconnectModal.confirmText",
         )}
         confirmingText={t(
-          "messages.managePhoneNumber.disconnectModal.confirmingText"
+          "messages.managePhoneNumber.disconnectModal.confirmingText",
         )}
       />
     </Container>

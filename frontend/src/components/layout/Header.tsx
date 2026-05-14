@@ -21,7 +21,7 @@ const Header = () => {
     // 4. Use padding-start/end (px) is fine, but gap handles spacing well
     <header className="flex h-16 shrink-0 items-center gap-2 border-b bg-background px-4 transition-all">
       <div className="flex items-center gap-2">
-        <SidebarTrigger />
+        <SidebarTrigger className="border-none shadow-none" />
         {/* 5. Use 'h-4' is fine, usually Separator handles orientation, 
              but we don't need margin classes if using gap in parent */}
         <Separator orientation="vertical" className="h-4" />

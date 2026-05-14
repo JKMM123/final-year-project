@@ -1,3 +1,4 @@
+import re
 from globals.utils.logger import logger
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import update, select, func, delete, or_, and_
@@ -20,6 +21,11 @@ from src.templates.exceptions.exceptions import (
     InvalidCustomersProvidedError,
     InvalidPackagesProvidedError,
 )
+from globals.exceptions.global_exceptions import ValidationError
+
+_BILL_PLACEHOLDER_VARS = {'amount_due_lbp', 'amount_due_usd', 'due_date'}
+_AREA_PLACEHOLDER_VARS = {'area_name'}
+_PACKAGE_PLACEHOLDER_VARS = {'amperage', 'fixed_fee', 'activation_fee'}
  
 
 class MessagesQueries:
@@ -185,7 +191,26 @@ class MessagesQueries:
                 validated_bill_filters = await self.validate_bill_filters(not_none_bill_filters, session)
                 filters["bill_filters"] = validated_bill_filters
 
-            customers_to_notify = await self.messages_query_builder(filters, session)   
+            # Determine which joins are needed based on template placeholders
+            template_message = template.get('message') if template_id else message
+            found_vars = set(re.findall(r'\{\{([^}]+)\}\}', template_message or ''))
+
+            if found_vars & _BILL_PLACEHOLDER_VARS:
+                validated_bill_filters = filters.get("bill_filters", {})
+                if 'due_date' not in validated_bill_filters:
+                    raise ValidationError(
+                        errors="Bill placeholders ({{due_date}}, {{amount_due_usd}}, {{amount_due_lbp}}) require 'bill_filters.due_date' to be specified."
+                    )
+
+            required_data = set()
+            validated_meter_filters = filters.get("meter_filters", {})
+            if found_vars & _AREA_PLACEHOLDER_VARS and 'area_ids' not in validated_meter_filters:
+                required_data.add('areas')
+            if found_vars & _PACKAGE_PLACEHOLDER_VARS and 'package_ids' not in validated_meter_filters:
+                required_data.add('packages')
+            filters['required_data'] = required_data
+
+            customers_to_notify = await self.messages_query_builder(filters, session)
 
             if template_id:
                 return customers_to_notify, template.get('message')
@@ -208,14 +233,15 @@ class MessagesQueries:
             
             # Track which JOINs we need based on filters
             joins_needed = set()
-            
-            # Check if we need area or package names
+            outer_joins_needed = set()
+
+            # Check if we need area or package names (driven by meter_filters)
             meter_filters = filters.get("meter_filters", {})
             if meter_filters:
                 if "area_ids" in meter_filters:
                     select_columns.append(Areas.area_name)
                     joins_needed.add('areas')
-                    
+
                 if "package_ids" in meter_filters:
                     select_columns.append(Packages.amperage)
                     select_columns.append(Packages.activation_fee)
@@ -224,23 +250,45 @@ class MessagesQueries:
 
             bill_filters = filters.get("bill_filters", {})
             if bill_filters:
-                select_columns.append(Bills.amount_due_lbp)  
-                select_columns.append(Bills.amount_due_usd)  
-                select_columns.append(Bills.due_date)  
+                select_columns.append(Bills.amount_due_lbp)
+                select_columns.append(Bills.amount_due_usd)
+                select_columns.append(Bills.due_date)
                 select_columns.append(Bills.blob_name)
                 joins_needed.add('bills')
 
+            # Add outer joins for area/package placeholders used without filter-driven inner joins
+            required_data = filters.get("required_data", set())
+            if 'areas' in required_data and 'areas' not in joins_needed:
+                select_columns.append(Areas.area_name)
+                outer_joins_needed.add('areas')
+            if 'packages' in required_data and 'packages' not in joins_needed:
+                select_columns.append(Packages.amperage)
+                select_columns.append(Packages.activation_fee)
+                select_columns.append(Packages.fixed_fee)
+                outer_joins_needed.add('packages')
 
             # Build the base query
             query = select(*select_columns).select_from(Meters)
-            
-            # Add JOINs based on what's needed
+
+            # Add INNER JOINs based on filters
             if 'areas' in joins_needed:
                 query = query.join(Areas, Meters.area_id == Areas.area_id)
             if 'packages' in joins_needed:
                 query = query.join(Packages, Meters.package_id == Packages.package_id)
             if 'bills' in joins_needed:
-                query = query.join(Bills, Meters.meter_id == Bills.meter_id)
+                if 'due_date' in bill_filters:
+                    query = query.join(Bills, and_(
+                        Meters.meter_id == Bills.meter_id,
+                        Bills.due_date == bill_filters['due_date']
+                    ))
+                else:
+                    query = query.join(Bills, Meters.meter_id == Bills.meter_id)
+
+            # Add OUTER JOINs for template placeholder requirements
+            if 'areas' in outer_joins_needed:
+                query = query.outerjoin(Areas, Meters.area_id == Areas.area_id)
+            if 'packages' in outer_joins_needed:
+                query = query.outerjoin(Packages, Meters.package_id == Packages.package_id)
 
             # Handle broadcast scenario
             if filters.get("broadcast"):

@@ -498,6 +498,7 @@
       "kwhRate": "سعر الكيلواط",
       "dollarRate": "سعر الصرف",
       "activationFee": "رسم الإشتراك (ل.ل)",
+      "package": "الباقة",
       "noBillExists": "لم يتم إصدار فاتورة لهذا الشهر.",
       "noDataAvailable": "لا توجد بيانات كشف حساب للسنة المختارة.",
       "billStatus": {

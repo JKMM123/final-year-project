@@ -349,7 +349,9 @@ export const ManagePhoneNumber = () => {
       case "CONNECTED":
         return (
           <Card.Body className="text-center px-3 py-5">
-            <FaCheckCircle size={60} className="text-success mb-3" />
+            <div className="d-flex justify-content-center mb-3">
+              <FaCheckCircle size={60} className="text-success" />
+            </div>
             <h3>{t("messages.managePhoneNumber.connected.title")}</h3>
             <p className="text-muted">
               {t("messages.managePhoneNumber.connected.description")}
@@ -358,8 +360,9 @@ export const ManagePhoneNumber = () => {
             <Button
               variant="danger"
               onClick={() => setShowDisconnectModal(true)}
+              className="d-inline-flex align-items-center gap-2"
             >
-              <FaExclamationTriangle className="me-2" />
+              <FaExclamationTriangle />
               {t("messages.managePhoneNumber.connected.disconnectButton")}
             </Button>
           </Card.Body>

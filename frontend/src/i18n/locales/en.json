@@ -495,6 +495,7 @@
       "kwhRate": "kWh Rate",
       "dollarRate": "Dollar Rate",
       "activationFee": "Activation Fee (LBP)",
+      "package": "Package",
       "noBillExists": "No bill generated for this month.",
       "noDataAvailable": "No statement data available for the selected year.",
       "billStatus": {

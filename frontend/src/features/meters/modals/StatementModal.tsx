@@ -208,6 +208,7 @@ export const StatementModal = ({
           <thead>
             <tr>
               <th>{t("meters.statementModal.month")}</th>
+              <th>{t("meters.statementModal.package")}</th>
               <th>{t("meters.statementModal.amountUsd")}</th>
               <th>{t("meters.statementModal.unpaidUsd")}</th>
               <th>{t("meters.statementModal.prevReading")}</th>
@@ -227,7 +228,8 @@ export const StatementModal = ({
                 <td>{t(`months.${month.month_name.toLowerCase()}`)}</td>
                 {month.bill_exists ? (
                   <>
-                    <td>{formatCurrency(month.amount_due_usd, "USD")}</td>
+                    <td>{month.amperage}A</td>
+                <td>{formatCurrency(month.amount_due_usd, "USD")}</td>
                     <td>{formatCurrency(month.unpaid_usd, "USD")}</td>
                     <td>{formatNumber(month.previous_reading)}</td>
                     <td>{formatNumber(month.current_reading)}</td>
@@ -265,7 +267,7 @@ export const StatementModal = ({
                     </td>
                   </>
                 ) : (
-                  <td colSpan={11} className="text-center text-muted">
+                  <td colSpan={12} className="text-center text-muted">
                     {t("meters.statementModal.noBillExists")}
                   </td>
                 )}

@@ -16,23 +16,23 @@ const AreasPage = lazy(() => import("../features/areas/AreasPage"));
 const ReadingsPage = lazy(() => import("../features/readings/ReadingsPage"));
 const DashboardPage = lazy(() => import("../features/dashboard/DashboardPage"));
 const CameraPage = lazy(
-  () => import("../features/readings/components/CameraPage")
+  () => import("../features/readings/components/CameraPage"),
 );
 const AddReadingPage = lazy(
-  () => import("../features/readings/modals/AddReadingPage")
+  () => import("../features/readings/modals/AddReadingPage"),
 );
 
 const FixesPage = lazy(() => import("../features/fixes/FixesPage"));
 const ForgotPasswordPage = lazy(
-  () => import("../features/auth/ForgotPasswordPage")
+  () => import("../features/auth/ForgotPasswordPage"),
 );
 
 const ManagePhoneNumber = lazy(() =>
   import("../features/messages/ManagePhoneNumber/ManagePhoneNumber").then(
     (module) => ({
       default: module.ManagePhoneNumber,
-    })
-  )
+    }),
+  ),
 );
 const FullPageSpinner = () => (
   <div className="vh-100 d-flex justify-content-center align-items-center">
@@ -80,7 +80,6 @@ const appRoutesConfig = [
   },
   {
     path: "readings",
-
     component: <ReadingsPage />,
     allowedRoles: ["system", "admin", "user"],
   },
@@ -93,7 +92,7 @@ const appRoutesConfig = [
   {
     path: "fixes",
     component: <FixesPage />,
-    allowedRoles: ["system", "admin"],
+    allowedRoles: ["system", "admin", "user"],
   },
   {
     path: "meters",
@@ -120,7 +119,7 @@ export const AppRoutes = () => {
 
   if (!auth) {
     console.error(
-      "AuthContext is undefined. Make sure AuthProvider wraps your App."
+      "AuthContext is undefined. Make sure AuthProvider wraps your App.",
     );
     return <div>Error: Missing AuthContext</div>;
   }

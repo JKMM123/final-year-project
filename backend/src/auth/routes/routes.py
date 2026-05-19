@@ -4,14 +4,14 @@ from globals.utils.logger import logger
 
 from src.app_state.router import health_check
 
-from src.auth.routers.authRouter import(
+from src.auth.routers.authRouter import (
     login,
     logout,
     get_me,
     validate_token,
     reset_password,
     send_otp,
-    verify_otp
+    verify_otp,
 )
 
 from src.users.routers.usersRouter import (
@@ -28,7 +28,7 @@ from src.rates.routers.ratesRouter import (
     delete_rates,
     get_rates_by_date,
     search_rates,
-    get_all_rates_by_year
+    get_all_rates_by_year,
 )
 
 from src.packages.routers.packagesRouter import (
@@ -48,7 +48,7 @@ from src.meters.routers.metersRouter import (
     get_meter_qr_code,
     get_meter_qr_codes,
     upload_meters,
-    delete_meters
+    delete_meters,
 )
 
 from src.readings.routers.readingsRouter import (
@@ -59,7 +59,7 @@ from src.readings.routers.readingsRouter import (
     search_readings,
     get_readings_summary,
     scan_reading,
-    verify_all_readings
+    verify_all_readings,
 )
 
 from src.bills.routers.billsRouter import (
@@ -68,20 +68,18 @@ from src.bills.routers.billsRouter import (
     delete_bill,
     search_bills,
     generate_bills,
-    download_bills
-    )
+    download_bills,
+)
 
 from src.areas.routers.areasRouter import (
     create_area,
     search_areas,
     delete_area,
-    update_area
+    update_area,
 )
 
 
-from src.dashboard.routers.dashboardRouter import (
-    get_dashboard_summary
-)
+from src.dashboard.routers.dashboardRouter import get_dashboard_summary
 
 
 from src.fixes.routers.fixesRouter import (
@@ -89,7 +87,7 @@ from src.fixes.routers.fixesRouter import (
     search_fixes,
     update_fix,
     delete_fixes,
-    get_fix
+    get_fix,
 )
 
 from src.templates.routers.templatesRouter import (
@@ -97,16 +95,14 @@ from src.templates.routers.templatesRouter import (
     get_template,
     update_template,
     delete_template,
-    search_templates
+    search_templates,
 )
 
 from src.messages.routers.messagesRouter import (
     send_messages,
 )
 
-from src.celery.router import (
-    get_task_status
-)
+from src.celery.router import get_task_status
 
 from src.messages.routers.whatsappSessionRouter import (
     create_session,
@@ -114,7 +110,7 @@ from src.messages.routers.whatsappSessionRouter import (
     get_session_status,
     connect_session,
     handle_webhook_events,
-    get_webhook_events
+    get_webhook_events,
 )
 
 from src.payments.routers.paymentsRouter import (
@@ -123,7 +119,7 @@ from src.payments.routers.paymentsRouter import (
     update_payment,
     delete_payment,
     get_all_payments_by_bill_id,
-    mark_all_bills_as_paid
+    mark_all_bills_as_paid,
 )
 
 
@@ -136,7 +132,11 @@ def create_routes_config():
             "endpoint": health_check,
             "public": True,
             "roles": {"admin", "system", "user"},
-            "rate_limit": {"requests_per_minute": 50, "requests_per_hour": 2000, "requests_per_day": 50000}
+            "rate_limit": {
+                "requests_per_minute": 50,
+                "requests_per_hour": 2000,
+                "requests_per_day": 50000,
+            },
         },
         # Auth routes
         {
@@ -145,7 +145,11 @@ def create_routes_config():
             "endpoint": login,
             "public": True,
             "roles": {"admin", "system", "user"},
-            "rate_limit": {"requests_per_minute": 5, "requests_per_hour": 20, "requests_per_day": 50}
+            "rate_limit": {
+                "requests_per_minute": 5,
+                "requests_per_hour": 20,
+                "requests_per_day": 50,
+            },
         },
         {
             "path": "/billing-system/api/v1/auth/logout",
@@ -153,7 +157,11 @@ def create_routes_config():
             "endpoint": logout,
             "public": False,
             "roles": {"admin", "system", "user"},
-            "rate_limit": {"requests_per_minute": 5, "requests_per_hour": 20, "requests_per_day": 50}
+            "rate_limit": {
+                "requests_per_minute": 5,
+                "requests_per_hour": 20,
+                "requests_per_day": 50,
+            },
         },
         {
             "path": "/billing-system/api/v1/auth/me",
@@ -161,7 +169,11 @@ def create_routes_config():
             "public": False,
             "endpoint": get_me,
             "roles": {"system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/auth/validate-token",
@@ -169,7 +181,11 @@ def create_routes_config():
             "public": False,
             "endpoint": validate_token,
             "roles": {"admin", "system", "user"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/auth/reset-password",
@@ -177,7 +193,11 @@ def create_routes_config():
             "public": True,
             "endpoint": reset_password,
             "roles": {"admin", "system", "user"},
-            "rate_limit": {"requests_per_minute": 20, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 20,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/auth/send-otp",
@@ -185,7 +205,11 @@ def create_routes_config():
             "public": True,
             "endpoint": send_otp,
             "roles": {"admin", "system", "user"},
-            "rate_limit": {"requests_per_minute": 3, "requests_per_hour": 10, "requests_per_day": 100}
+            "rate_limit": {
+                "requests_per_minute": 3,
+                "requests_per_hour": 10,
+                "requests_per_day": 100,
+            },
         },
         {
             "path": "/billing-system/api/v1/auth/verify-otp",
@@ -193,24 +217,36 @@ def create_routes_config():
             "public": True,
             "endpoint": verify_otp,
             "roles": {"admin", "system", "user"},
-            "rate_limit": {"requests_per_minute": 5, "requests_per_hour": 20, "requests_per_day": 50}
+            "rate_limit": {
+                "requests_per_minute": 5,
+                "requests_per_hour": 20,
+                "requests_per_day": 50,
+            },
         },
         # User routes
-        {            
+        {
             "path": "/billing-system/api/v1/users/search",
             "method": "GET",
             "public": False,
             "endpoint": search_users,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 100, "requests_per_hour": 1000, "requests_per_day": 24000}
+            "rate_limit": {
+                "requests_per_minute": 100,
+                "requests_per_hour": 1000,
+                "requests_per_day": 24000,
+            },
         },
         {
-            "path":"/billing-system/api/v1/users/create",
+            "path": "/billing-system/api/v1/users/create",
             "method": "POST",
             "public": False,
             "endpoint": create_user,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/users/{user_id}",
@@ -218,7 +254,11 @@ def create_routes_config():
             "endpoint": get_user,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/users/{user_id}",
@@ -226,7 +266,11 @@ def create_routes_config():
             "endpoint": update_user,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/users/{user_id}",
@@ -234,7 +278,11 @@ def create_routes_config():
             "endpoint": delete_user,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # Area routes
         {
@@ -242,32 +290,48 @@ def create_routes_config():
             "method": "POST",
             "endpoint": create_area,
             "public": False,
-            "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "roles": {"admin", "system", "user"},
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/areas/search",
             "method": "GET",
             "endpoint": search_areas,
             "public": False,
-            "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 100, "requests_per_hour": 1000, "requests_per_day": 24000}
+            "roles": {"admin", "system", "user"},
+            "rate_limit": {
+                "requests_per_minute": 100,
+                "requests_per_hour": 1000,
+                "requests_per_day": 24000,
+            },
         },
         {
             "path": "/billing-system/api/v1/areas/{area_id}",
             "method": "DELETE",
             "endpoint": delete_area,
             "public": False,
-            "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "roles": {"admin", "system", "user"},
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/areas/{area_id}",
             "method": "PUT",
             "endpoint": update_area,
             "public": False,
-            "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "roles": {"admin", "system", "user"},
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # Rates routes
         {
@@ -275,32 +339,48 @@ def create_routes_config():
             "method": "POST",
             "endpoint": create_rates,
             "public": False,
-            "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 60, "requests_per_hour": 3600, "requests_per_day": 50000}
+            "roles": {"admin", "system", "user"},
+            "rate_limit": {
+                "requests_per_minute": 60,
+                "requests_per_hour": 3600,
+                "requests_per_day": 50000,
+            },
         },
         {
             "path": "/billing-system/api/v1/rates/search",
             "method": "GET",
             "endpoint": search_rates,
             "public": False,
-            "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 60, "requests_per_hour": 3600, "requests_per_day": 50000}
+            "roles": {"admin", "system", "user"},
+            "rate_limit": {
+                "requests_per_minute": 60,
+                "requests_per_hour": 3600,
+                "requests_per_day": 50000,
+            },
         },
         {
             "path": "/billing-system/api/v1/rates/all/{year}",
             "method": "GET",
             "endpoint": get_all_rates_by_year,
             "public": False,
-            "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 60, "requests_per_hour": 3600, "requests_per_day": 50000}
+            "roles": {"admin", "system", "user"},
+            "rate_limit": {
+                "requests_per_minute": 60,
+                "requests_per_hour": 3600,
+                "requests_per_day": 50000,
+            },
         },
         {
             "path": "/billing-system/api/v1/rates/{rate_id}",
             "method": "PUT",
             "endpoint": update_rates,
             "public": False,
-            "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 60, "requests_per_hour": 3600, "requests_per_day": 50000}
+            "roles": {"admin", "system", "user"},
+            "rate_limit": {
+                "requests_per_minute": 60,
+                "requests_per_hour": 3600,
+                "requests_per_day": 50000,
+            },
         },
         {
             "path": "/billing-system/api/v1/rates/{effective_date}",
@@ -308,7 +388,11 @@ def create_routes_config():
             "endpoint": get_rates_by_date,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 60, "requests_per_hour": 3600, "requests_per_day": 50000}
+            "rate_limit": {
+                "requests_per_minute": 60,
+                "requests_per_hour": 3600,
+                "requests_per_day": 50000,
+            },
         },
         {
             "path": "/billing-system/api/v1/rates/{rate_id}",
@@ -316,7 +400,11 @@ def create_routes_config():
             "endpoint": delete_rates,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 60, "requests_per_hour": 3600, "requests_per_day": 50000}
+            "rate_limit": {
+                "requests_per_minute": 60,
+                "requests_per_hour": 3600,
+                "requests_per_day": 50000,
+            },
         },
         # Package routes
         {
@@ -325,7 +413,11 @@ def create_routes_config():
             "endpoint": search_packages,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 100, "requests_per_hour": 1000, "requests_per_day": 24000}
+            "rate_limit": {
+                "requests_per_minute": 100,
+                "requests_per_hour": 1000,
+                "requests_per_day": 24000,
+            },
         },
         {
             "path": "/billing-system/api/v1/packages/create",
@@ -333,7 +425,11 @@ def create_routes_config():
             "endpoint": create_package,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/packages/{package_id}",
@@ -341,7 +437,11 @@ def create_routes_config():
             "endpoint": get_package,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/packages/{package_id}",
@@ -349,7 +449,11 @@ def create_routes_config():
             "endpoint": update_package,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/packages/{package_id}",
@@ -357,7 +461,11 @@ def create_routes_config():
             "endpoint": delete_package,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # Meter routes
         {
@@ -366,7 +474,11 @@ def create_routes_config():
             "endpoint": search_meters,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 100, "requests_per_hour": 1000, "requests_per_day": 24000}
+            "rate_limit": {
+                "requests_per_minute": 100,
+                "requests_per_hour": 1000,
+                "requests_per_day": 24000,
+            },
         },
         {
             "path": "/billing-system/api/v1/meters/create",
@@ -374,7 +486,11 @@ def create_routes_config():
             "endpoint": create_meter,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/meters/qr-codes",
@@ -382,7 +498,11 @@ def create_routes_config():
             "endpoint": get_meter_qr_codes,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/meters/upload",
@@ -390,7 +510,11 @@ def create_routes_config():
             "endpoint": upload_meters,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/meters/delete",
@@ -398,7 +522,11 @@ def create_routes_config():
             "endpoint": delete_meters,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/meters/{meter_id}",
@@ -406,7 +534,11 @@ def create_routes_config():
             "endpoint": get_meter,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/meters/{meter_id}",
@@ -414,23 +546,35 @@ def create_routes_config():
             "endpoint": update_meter,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
-            'path': '/billing-system/api/v1/meters/{meter_id}',
-            'method': 'DELETE',
-            'endpoint': delete_meter,
+            "path": "/billing-system/api/v1/meters/{meter_id}",
+            "method": "DELETE",
+            "endpoint": delete_meter,
             "public": False,
-            'roles': {'admin', 'system'},
-            'rate_limit': {'requests_per_minute': 10, 'requests_per_hour': 100, 'requests_per_day': 1000}
+            "roles": {"admin", "system"},
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
-            "path":"/billing-system/api/v1/meters/{meter_id}/qr-code",
+            "path": "/billing-system/api/v1/meters/{meter_id}/qr-code",
             "method": "GET",
             "endpoint": get_meter_qr_code,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # Readings routes
         {
@@ -439,7 +583,11 @@ def create_routes_config():
             "endpoint": search_readings,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 100, "requests_per_hour": 1000, "requests_per_day": 24000}
+            "rate_limit": {
+                "requests_per_minute": 100,
+                "requests_per_hour": 1000,
+                "requests_per_day": 24000,
+            },
         },
         {
             "path": "/billing-system/api/v1/readings/create",
@@ -447,15 +595,23 @@ def create_routes_config():
             "endpoint": create_reading,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
-            "path":"/billing-system/api/v1/readings/summary",
+            "path": "/billing-system/api/v1/readings/summary",
             "method": "GET",
             "endpoint": get_readings_summary,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/readings/{reading_id}",
@@ -463,7 +619,11 @@ def create_routes_config():
             "endpoint": get_reading,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/readings/{reading_id}",
@@ -471,7 +631,11 @@ def create_routes_config():
             "endpoint": update_reading,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/readings/{reading_id}",
@@ -479,23 +643,35 @@ def create_routes_config():
             "endpoint": delete_reading,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
-            "path":"/billing-system/api/v1/readings/{meter_id}/scan",
+            "path": "/billing-system/api/v1/readings/{meter_id}/scan",
             "method": "POST",
             "endpoint": scan_reading,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 100, "requests_per_hour": 10000, "requests_per_day": 100000}
+            "rate_limit": {
+                "requests_per_minute": 100,
+                "requests_per_hour": 10000,
+                "requests_per_day": 100000,
+            },
         },
         {
-            "path":"/billing-system/api/v1/readings/verify-all",
+            "path": "/billing-system/api/v1/readings/verify-all",
             "method": "POST",
             "endpoint": verify_all_readings,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 100, "requests_per_hour": 10000, "requests_per_day": 100000}
+            "rate_limit": {
+                "requests_per_minute": 100,
+                "requests_per_hour": 10000,
+                "requests_per_day": 100000,
+            },
         },
         # Bills routes
         {
@@ -504,7 +680,11 @@ def create_routes_config():
             "endpoint": search_bills,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 100, "requests_per_hour": 1000, "requests_per_day": 24000}
+            "rate_limit": {
+                "requests_per_minute": 100,
+                "requests_per_hour": 1000,
+                "requests_per_day": 24000,
+            },
         },
         {
             "path": "/billing-system/api/v1/bills/download",
@@ -512,7 +692,11 @@ def create_routes_config():
             "endpoint": download_bills,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/bills/generate",
@@ -520,7 +704,11 @@ def create_routes_config():
             "endpoint": generate_bills,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/bills/{bill_id}",
@@ -528,7 +716,11 @@ def create_routes_config():
             "endpoint": get_bill,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # {
         #     'path': '/billing-system/api/v1/bills/{bill_id}',
@@ -539,12 +731,16 @@ def create_routes_config():
         #     'rate_limit': {'requests_per_minute': 10, 'requests_per_hour': 100, 'requests_per_day': 1000}
         # },
         {
-            'path': '/billing-system/api/v1/bills/{bill_id}',
-            'method': 'DELETE',
-            'endpoint': delete_bill,
+            "path": "/billing-system/api/v1/bills/{bill_id}",
+            "method": "DELETE",
+            "endpoint": delete_bill,
             "public": False,
-            'roles': {'admin', 'system'},
-            'rate_limit': {'requests_per_minute': 10, 'requests_per_hour': 100, 'requests_per_day': 1000}
+            "roles": {"admin", "system"},
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # Fixes routes
         {
@@ -553,7 +749,11 @@ def create_routes_config():
             "endpoint": search_fixes,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 100, "requests_per_hour": 1000, "requests_per_day": 24000}
+            "rate_limit": {
+                "requests_per_minute": 100,
+                "requests_per_hour": 1000,
+                "requests_per_day": 24000,
+            },
         },
         {
             "path": "/billing-system/api/v1/fixes/create",
@@ -561,7 +761,11 @@ def create_routes_config():
             "endpoint": create_fix,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/fixes/delete",
@@ -569,7 +773,11 @@ def create_routes_config():
             "endpoint": delete_fixes,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/fixes/{fix_id}",
@@ -577,7 +785,11 @@ def create_routes_config():
             "endpoint": get_fix,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/fixes/{fix_id}",
@@ -585,7 +797,11 @@ def create_routes_config():
             "endpoint": update_fix,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # Templates routes
         {
@@ -594,7 +810,11 @@ def create_routes_config():
             "endpoint": create_template,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/templates/search",
@@ -602,7 +822,11 @@ def create_routes_config():
             "endpoint": search_templates,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 100, "requests_per_hour": 1000, "requests_per_day": 24000}
+            "rate_limit": {
+                "requests_per_minute": 100,
+                "requests_per_hour": 1000,
+                "requests_per_day": 24000,
+            },
         },
         {
             "path": "/billing-system/api/v1/templates/{template_id}",
@@ -610,7 +834,11 @@ def create_routes_config():
             "endpoint": get_template,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/templates/{template_id}",
@@ -618,7 +846,11 @@ def create_routes_config():
             "endpoint": update_template,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/templates/{template_id}",
@@ -626,7 +858,11 @@ def create_routes_config():
             "endpoint": delete_template,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # Dashboard routes
         {
@@ -635,7 +871,11 @@ def create_routes_config():
             "endpoint": get_dashboard_summary,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # Messages routes
         {
@@ -644,7 +884,11 @@ def create_routes_config():
             "endpoint": send_messages,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # Whatsapp Session Routes
         {
@@ -653,7 +897,11 @@ def create_routes_config():
             "endpoint": create_session,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/session/delete",
@@ -661,7 +909,11 @@ def create_routes_config():
             "endpoint": delete_session,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/session/status",
@@ -669,7 +921,11 @@ def create_routes_config():
             "endpoint": get_session_status,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/session/connect",
@@ -677,23 +933,35 @@ def create_routes_config():
             "endpoint": connect_session,
             "public": False,
             "roles": {"admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/session/webhook",
             "method": "POST",
             "endpoint": handle_webhook_events,
             "public": True,
-            "roles": {"user","admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "roles": {"user", "admin", "system"},
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/session/webhook/events",
             "method": "GET",
             "endpoint": get_webhook_events,
             "public": True,
-            "roles": {"user","admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "roles": {"user", "admin", "system"},
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # celery
         {
@@ -702,7 +970,11 @@ def create_routes_config():
             "endpoint": get_task_status,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         # Payments
         {
@@ -711,7 +983,11 @@ def create_routes_config():
             "endpoint": create_payment,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/payments/all",
@@ -719,7 +995,11 @@ def create_routes_config():
             "endpoint": get_all_payments_by_bill_id,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/payments/mark-as-paid",
@@ -727,7 +1007,11 @@ def create_routes_config():
             "endpoint": mark_all_bills_as_paid,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/payments/{payment_id}",
@@ -735,7 +1019,11 @@ def create_routes_config():
             "endpoint": get_payment_by_id,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/payments/{payment_id}",
@@ -743,7 +1031,11 @@ def create_routes_config():
             "endpoint": update_payment,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
         {
             "path": "/billing-system/api/v1/payments/{payment_id}",
@@ -751,33 +1043,35 @@ def create_routes_config():
             "endpoint": delete_payment,
             "public": False,
             "roles": {"user", "admin", "system"},
-            "rate_limit": {"requests_per_minute": 10, "requests_per_hour": 100, "requests_per_day": 1000}
+            "rate_limit": {
+                "requests_per_minute": 10,
+                "requests_per_hour": 100,
+                "requests_per_day": 1000,
+            },
         },
-        
     ]
     # Build optimized lookup structures
     route_config = {}
-    
+
     for route_def in routes:
         # Create lookup key
         key = f"{route_def['method']}:{route_def['path']}"
-        
+
         # Store config for fast lookup
         route_config[key] = {
             "public": route_def["public"],
             "roles": route_def["roles"],
             "rate_limit": route_def["rate_limit"],
             "route": Route(
-                route_def["path"], 
-                methods=[route_def["method"]], 
-                endpoint=route_def["endpoint"]
-            )
+                route_def["path"],
+                methods=[route_def["method"]],
+                endpoint=route_def["endpoint"],
+            ),
         }
-        
+
     logger.info("Routes configuration created successfully.")
-    
+
     return route_config
 
 
 ROUTE_CONFIG = create_routes_config()
-
